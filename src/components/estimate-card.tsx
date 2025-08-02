@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import TabNavigation from "./TabNavigation";
-import ScheduleTripForm from "./ScheduleTripForm";
-import TripInfoForm from "./TripInfoForm";
+import ScheduleTripForm from "@/components/schedule-trip-form";
+import { Card, CardContent } from "./ui/card";
+import TripInfoForm from "./trip-info-form";
+import TabNavigation from "./trip-navigation";
 
 export interface FormData {
   tripType: string;
@@ -76,7 +76,7 @@ export default function EstimateCard() {
         ) : (
           <TripInfoForm
             formData={formData}
-            onFormDataChange={handleFormDataChange}
+            onFormDataChange={handleFormDataChange()}
           />
         )}
       </CardContent>

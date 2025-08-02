@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export default function Header() {
   return (
     <header className="flex items-center justify-between p-4 sm:p-6">
