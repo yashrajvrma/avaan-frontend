@@ -54,11 +54,11 @@ export default function EstimateCard() {
   };
 
   return (
-    <Card className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
-      <CardContent className="p-4 sm:p-6 lg:p-8">
-        <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">
+    <Card className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <CardContent className="sm:py-2 sm:px-6">
+        <div className="text-sm sm:text-lg font-semibold text-neutral-800 mb-2 sm:mb-3">
           Get Estimate
-        </h2>
+        </div>
 
         <TabNavigation
           activeTab={activeTab}

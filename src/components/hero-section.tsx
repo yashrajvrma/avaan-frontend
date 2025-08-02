@@ -2,7 +2,7 @@ import trolleyImg from "../assets/istockphoto-160195860-612x612.jpg";
 
 export default function HeroSection() {
   return (
-    <div className="flex justify-between gap-4 items-center mb-12 lg:mb-16">
+    <div className="flex justify-between gap-4 items-center mb-12 lg:mb-16 px-12">
       <div className="text-3xl sm:text-4xl lg:text-6xl font-semibold text-neutral-800 leading-tighter mb-6 lg:mb-8 sm:text-start text-center tracking-tight">
         Because travel should
         <br />

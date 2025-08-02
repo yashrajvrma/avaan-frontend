@@ -6,7 +6,7 @@ export default function Schedule() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-300 via-yellow-200 to-yellow-50">
       <Header />
-      <div className="container mx-auto px-4 sm:px-0 py-8 sm:py-12">
+      <div className="container mx-auto px-4 sm:px-0 sm:pt-6 sm:pb-4">
         <HeroSection />
       </div>
       <EstimateCard />

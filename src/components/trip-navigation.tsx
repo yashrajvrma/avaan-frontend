@@ -12,12 +12,12 @@ export default function TabNavigation({
   isScheduleFormValid,
 }: TabNavigationProps) {
   return (
-    <div className="flex w-full mb-6 sm:mb-8">
+    <div className="flex w-full mb-6 sm:mb-8 font-ge">
       <div className="flex w-full relative">
         {/* Schedule Trip Tab */}
         <button
           onClick={() => onTabChange("schedule")}
-          className={`flex-1 flex items-center justify-center space-x-1 sm:space-x-2 py-3 sm:py-4 px-3 sm:px-6 rounded-full border-2 transition-all duration-300 ease-in-out ${
+          className={`flex-1 flex items-center justify-center text-sm space-x-1 sm:space-x-2 px-3 py-2.5 sm:px-6 rounded-full border-2 transition-all duration-300 ease-in-out ${
             activeTab === "schedule" || activeTab === "info"
               ? "bg-white text-teal-600 border-teal-500 shadow-md"
               : "bg-gray-50 text-gray-600 border-gray-300 hover:border-gray-400"
@@ -42,7 +42,7 @@ export default function TabNavigation({
         <button
           onClick={() => onTabChange("info")}
           disabled={!isScheduleFormValid}
-          className={`flex-1 flex items-center justify-center space-x-1 sm:space-x-2 py-3 sm:py-4 px-3 sm:px-6 rounded-full border-2 transition-all duration-300 ease-in-out ${
+          className={`flex-1 flex items-center justify-center text-sm space-x-1 sm:space-x-2 py-2.5 px-3 sm:px-6 rounded-full border-2 transition-all duration-300 ease-in-out ${
             activeTab === "info"
               ? "bg-white text-teal-600 border-teal-500 shadow-md"
               : isScheduleFormValid
