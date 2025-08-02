@@ -4,12 +4,12 @@ import EstimateCard from "@/components/estimate-card";
 
 export default function Schedule() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600">
+    <div className="min-h-screen bg-gradient-to-br from-yellow-300 via-yellow-200 to-yellow-50">
       <Header />
-      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div className="container mx-auto px-4 sm:px-0 py-8 sm:py-12">
         <HeroSection />
-        <EstimateCard />
       </div>
+      <EstimateCard />
     </div>
   );
 }
