@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Schedule from "./pages/Schedule";
+import Domestic from "./pages/Domestic";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/schedule" element={<Schedule />}></Route>
+        <Route path="/domestic" element={<Domestic />}></Route>
       </Routes>
     </BrowserRouter>
   );
