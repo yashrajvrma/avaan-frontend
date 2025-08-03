@@ -71,7 +71,7 @@ export default function Summary({
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <CreditCard className="w-5 h-5 text-purple-600 mt-0.5" />
+                <CreditCard className="w-5 h-5 text-yellow-400 mt-0.5" />
                 <div>
                   <p className="text-sm font-medium text-gray-900">
                     Delivery Mode

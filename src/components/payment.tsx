@@ -249,7 +249,7 @@ export default function Payment({ total }: PaymentProps) {
               </span>
             </div>
           </div>
-          <Button className="w-full mt-6 bg-purple-600 hover:bg-purple-700 text-white">
+          <Button className="w-full mt-6 bg-yellow-500 hover:bg-yellow-600 text-white">
             Pay ₹{total.toFixed(2)}
           </Button>
         </CardContent>

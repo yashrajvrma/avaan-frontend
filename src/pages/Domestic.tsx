@@ -6,6 +6,7 @@ import Summary from "@/components/summary";
 import Payment from "@/components/payment";
 import StepSidebar from "@/components/steps-sidebar";
 import PriceSidebar from "@/components/price-sidebar";
+import Header from "@/components/header";
 
 interface BagOption {
   id: string;
@@ -153,54 +154,21 @@ export default function DomesticShipmentPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="text-2xl font-bold">
-                <span className="text-purple-600">av</span>
-                <span className="text-yellow-500">aa</span>
-                <span className="text-purple-600">n</span>
-              </div>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-600 hover:text-gray-900">
-                Excess Baggage
-              </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">
-                Package Delivery
-              </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">
-                Airport Transfer
-              </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">
-                Tracking
-              </a>
-            </nav>
-            <div className="flex items-center space-x-4">
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white">
-                Book Now
-              </Button>
-              <Button variant="outline" size="icon">
-                📞
-              </Button>
-              <Button variant="outline" size="icon">
-                👤
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <Header />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16">
         {/* Page Title */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">
-            Create <span className="text-purple-600">A Shipment</span>
-          </h1>
-          <div className="w-16 h-1 bg-purple-600 mt-2"></div>
+          <div className="text-5xl font-semibold text-neutral-900 tracking-tight">
+            Create A Shipment
+          </div>
+
+          <div className="w-full h-[2px] bg-gray-300 relative rounded-sm mt-4">
+            <div className="w-[8%] h-[5px] bg-yellow-600 absolute top-[-1.5px] left-0 rounded-sm"></div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -230,7 +198,7 @@ export default function DomesticShipmentPage() {
               <Button
                 onClick={nextStep}
                 disabled={currentStep === 4}
-                className="bg-purple-600 hover:bg-purple-700 text-white flex items-center space-x-2"
+                className="bg-yellow-500 hover:bg-yellow-600 text-white flex items-center space-x-2"
               >
                 <span>Next →</span>
               </Button>

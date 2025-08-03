@@ -18,49 +18,49 @@ export default function StepSidebar({
   onStepClick,
 }: StepSidebarProps) {
   return (
-    <div className="space-y-4">
+    <div className="relative">
       {steps.map((step, index) => (
-        <div key={step.id} className="flex items-center">
+        <div key={step.id} className="relative flex items-center">
+          {/* Connecting line */}
+          {index < steps.length - 1 && (
+            <div className="absolute left-4.5 top-8 w-0.5 h-16 bg-neutral-300 z-0"></div>
+          )}
+
           <button
             onClick={() => onStepClick(step.id)}
-            className={`flex items-center w-full p-3 rounded-lg transition-all duration-200 ${
-              step.id === currentStep
-                ? "bg-purple-100 border-l-4 border-purple-600"
-                : step.completed
-                ? "bg-green-50 hover:bg-green-100"
-                : "bg-gray-50 hover:bg-gray-100"
-            }`}
+            className="flex items-center w-full py-3 transition-all duration-200 rounded-lg relative z-10"
+            disabled={!step.completed && step.id !== currentStep}
           >
+            {/* Circle with icon or number */}
             <div
-              className={`flex items-center justify-center w-6 h-6 rounded-full mr-3 transition-all duration-200 ${
+              className={`flex items-center justify-center w-10 h-10 rounded-full mr-4 transition-all duration-200 ${
                 step.completed
-                  ? "bg-green-500 text-white animate-pulse"
+                  ? "bg-green-500 text-white"
                   : step.id === currentStep
-                  ? "bg-purple-600 text-white"
-                  : "bg-gray-300 text-gray-600"
+                  ? "bg-yellow-500 text-white"
+                  : "bg-neutral-400 text-white"
               }`}
             >
               {step.completed ? (
-                <Check className="w-4 h-4 animate-checkmark" />
+                <Check className="w-4 h-4" />
               ) : (
-                <span className="text-xs font-medium">{step.id}</span>
+                <span className="text-sm font-medium">{step.id}</span>
               )}
             </div>
+
+            {/* Step name */}
             <span
-              className={`text-sm font-medium ${
+              className={`text-base font-medium ${
                 step.id === currentStep
-                  ? "text-purple-600"
+                  ? "text-yellow-600"
                   : step.completed
                   ? "text-green-600"
-                  : "text-gray-600"
+                  : "text-neutral-400"
               }`}
             >
               {step.name}
             </span>
           </button>
-          {index < steps.length - 1 && (
-            <div className="w-px h-8 bg-gray-200 ml-6 mt-2"></div>
-          )}
         </div>
       ))}
     </div>

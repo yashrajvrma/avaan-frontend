@@ -171,7 +171,7 @@ export default function PriceSidebar({
               value={couponCode}
               onChange={(e) => setCouponCode(e.target.value)}
             />
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+            <Button className="bg-yellow-500 hover:bg-yellow-600 text-white">
               Apply
             </Button>
           </div>

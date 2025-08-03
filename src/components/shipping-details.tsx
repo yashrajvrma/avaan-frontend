@@ -129,7 +129,7 @@ export default function ShippingDetails({
                     </>
                   ) : (
                     <Button
-                      className="bg-purple-600 hover:bg-purple-700 text-white"
+                      className="bg-yellow-500 hover:bg-yellow-600 text-white"
                       onClick={() => updateBagQuantity(bag.id, 1)}
                     >
                       Add
