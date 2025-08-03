@@ -171,7 +171,7 @@ export default function DomesticShipmentPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
           {/* Step Sidebar */}
           <div className="lg:col-span-1">
             <StepSidebar

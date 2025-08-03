@@ -100,8 +100,8 @@ export default function AdditionalDetails({
                 className="w-full"
               />
             </div>
-            <div className="bg-purple-50 border border-purple-200 rounded-lg p-3">
-              <p className="text-sm text-purple-700">
+            <div className="bg-yellow-50 border border-purple-200 rounded-lg p-3">
+              <p className="text-sm text-yellow-700">
                 <strong>Important Info:</strong> Our pickup timings are from 12
                 PM to 8 PM.
               </p>

@@ -1,6 +1,11 @@
-import { Package, MapPin, Calendar, Shield, CreditCard } from "lucide-react";
+import { Package, ChevronDown, Edit } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { useState } from "react";
 
 interface BagOption {
   id: string;
@@ -26,159 +31,123 @@ export default function Summary({
   selectedMode,
   pickupDate,
 }: SummaryProps) {
+  const [baggageExpanded, setBaggageExpanded] = useState(true);
+  const [addressExpanded, setAddressExpanded] = useState(true);
+
   const selectedBags = bagOptions.filter((bag) => bag.quantity > 0);
-  const totalBags = selectedBags.reduce((sum, bag) => sum + bag.quantity, 0);
-  const totalWeight = selectedBags.reduce(
-    (sum, bag) => sum + bag.quantity * Number.parseInt(bag.maxWeight),
-    0
-  );
 
   return (
     <div className="space-y-6">
-      {/* Shipment Overview */}
+      {/* Baggage Details */}
       <Card>
-        <CardContent className="p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            Shipment Overview
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-green-600 mt-0.5" />
-                <div>
-                  <p className="text-sm font-medium text-gray-900">From</p>
-                  <p className="text-sm text-gray-600">{shipFrom}</p>
-                </div>
+        <CardContent className="p-0">
+          <Collapsible open={baggageExpanded} onOpenChange={setBaggageExpanded}>
+            <CollapsibleTrigger className="flex items-center justify-between w-full p-6 hover:bg-gray-50">
+              <div className="flex items-center space-x-2">
+                <h2 className="text-xl font-semibold text-gray-900">
+                  Baggage Details
+                </h2>
+                <Edit className="w-4 h-4 text-yellow-600" />
               </div>
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-red-600 mt-0.5" />
-                <div>
-                  <p className="text-sm font-medium text-gray-900">To</p>
-                  <p className="text-sm text-gray-600">{shipTo}</p>
-                </div>
+              <ChevronDown
+                className={`w-5 h-5 text-gray-400 transition-transform ${
+                  baggageExpanded ? "rotate-180" : ""
+                }`}
+              />
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <div className="px-6 pb-6 border-t">
+                {selectedBags.length > 0 ? (
+                  <div className="space-y-3 pt-4">
+                    {selectedBags.map((bag) => (
+                      <div
+                        key={bag.id}
+                        className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
+                      >
+                        <div className="flex items-center space-x-3">
+                          <Package className="w-5 h-5 text-gray-400" />
+                          <div>
+                            <p className="font-medium text-gray-900">
+                              {bag.name}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-medium text-gray-900">
+                            {bag.quantity} x ₹{bag.discountedPrice}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-8">
+                    <Package className="w-12 h-12 text-gray-300 mx-auto mb-4" />
+                    <p className="text-gray-500">No bags selected</p>
+                  </div>
+                )}
               </div>
-            </div>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <Calendar className="w-5 h-5 text-blue-600 mt-0.5" />
-                <div>
-                  <p className="text-sm font-medium text-gray-900">
-                    Pickup Date
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {pickupDate || "Not selected"}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <CreditCard className="w-5 h-5 text-yellow-400 mt-0.5" />
-                <div>
-                  <p className="text-sm font-medium text-gray-900">
-                    Delivery Mode
-                  </p>
-                  <Badge
-                    variant={
-                      selectedMode === "express" ? "default" : "secondary"
-                    }
-                  >
-                    {selectedMode === "express"
-                      ? "Express (7 Days)"
-                      : "Priority (3 Days)"}
-                  </Badge>
-                </div>
-              </div>
-            </div>
-          </div>
+            </CollapsibleContent>
+          </Collapsible>
         </CardContent>
       </Card>
 
-      {/* Selected Bags */}
+      {/* Address Details */}
       <Card>
-        <CardContent className="p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            Selected Bags
-          </h2>
-          {selectedBags.length > 0 ? (
-            <div className="space-y-3">
-              {selectedBags.map((bag) => (
-                <div
-                  key={bag.id}
-                  className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
-                >
-                  <div className="flex items-center space-x-3">
-                    <Package className="w-5 h-5 text-gray-400" />
-                    <div>
-                      <p className="font-medium text-gray-900">{bag.name}</p>
-                      <p className="text-sm text-gray-600">
-                        Quantity: {bag.quantity}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-medium text-gray-900">
-                      ₹{(bag.discountedPrice * bag.quantity).toFixed(2)}
-                    </p>
-                    <p className="text-sm text-gray-500 line-through">
-                      ₹{(bag.originalPrice * bag.quantity).toFixed(2)}
-                    </p>
-                  </div>
-                </div>
-              ))}
-              <div className="border-t pt-4 mt-4">
-                <div className="flex justify-between items-center">
+        <CardContent className="p-0">
+          <Collapsible open={addressExpanded} onOpenChange={setAddressExpanded}>
+            <CollapsibleTrigger className="flex items-center justify-between w-full p-6 hover:bg-gray-50">
+              <div className="flex items-center space-x-2">
+                <h2 className="text-xl font-semibold text-gray-900">
+                  Address Details
+                </h2>
+                <Edit className="w-4 h-4 text-yellow-600" />
+              </div>
+              <ChevronDown
+                className={`w-5 h-5 text-gray-400 transition-transform ${
+                  addressExpanded ? "rotate-180" : ""
+                }`}
+              />
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <div className="px-6 pb-6 border-t pt-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <p className="font-medium text-gray-900">
-                      Total: {totalBags} bags
+                    <h3 className="text-sm font-medium text-yellow-600 mb-2">
+                      Pickup Address
+                    </h3>
+                    <p className="text-sm text-gray-700">
+                      1k1k, kksksks, Mumbai, Maharashtra - 400089 | 9172197403
                     </p>
-                    <p className="text-sm text-gray-600">
-                      Estimated weight: {totalWeight} kg
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-yellow-600 mb-2">
+                      Destination Address
+                    </h3>
+                    <p className="text-sm text-gray-700">
+                      jsjsj, jj, Hyderabad, Telangana - 500100 | 9172197403
                     </p>
                   </div>
                 </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="text-sm font-medium text-yellow-600 mb-2">
+                      Pickup Date
+                    </h3>
+                    <p className="text-sm text-gray-700">
+                      {pickupDate || "06/08/2025"}
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-yellow-600 mb-2">
+                      Pickup Time
+                    </h3>
+                    <p className="text-sm text-gray-700">12pm to 8pm</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ) : (
-            <div className="text-center py-8">
-              <Package className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-              <p className="text-gray-500">No bags selected</p>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-
-      {/* Additional Services */}
-      <Card>
-        <CardContent className="p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            Additional Services
-          </h2>
-          <div className="flex items-center space-x-3 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-            <Shield className="w-5 h-5 text-yellow-600" />
-            <div>
-              <p className="font-medium text-gray-900">Avaan Protect</p>
-              <p className="text-sm text-gray-600">
-                Insurance coverage up to ₹5000
-              </p>
-            </div>
-            <Badge variant="outline" className="ml-auto">
-              ₹100
-            </Badge>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Important Notes */}
-      <Card>
-        <CardContent className="p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            Important Notes
-          </h2>
-          <div className="space-y-2 text-sm text-gray-600">
-            <p>• Pickup timings are from 12 PM to 8 PM</p>
-            <p>• Please ensure all items are properly packed</p>
-            <p>• Prohibited items are not allowed in shipments</p>
-            <p>• Keep pickup address accessible during pickup hours</p>
-          </div>
+            </CollapsibleContent>
+          </Collapsible>
         </CardContent>
       </Card>
     </div>
