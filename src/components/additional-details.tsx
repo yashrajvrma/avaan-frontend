@@ -26,7 +26,7 @@ export default function AdditionalDetails({
   return (
     <div className="space-y-6">
       {/* Add Address Details */}
-      <Card>
+      <Card className="py-0">
         <CardContent className="p-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">
             Add Address Details
@@ -61,7 +61,7 @@ export default function AdditionalDetails({
       </Card>
 
       {/* Avaan Protect */}
-      <Card>
+      <Card className="py-0">
         <CardContent className="p-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">
             Avaan Protect
@@ -78,7 +78,7 @@ export default function AdditionalDetails({
       </Card>
 
       {/* Pickup Timings */}
-      <Card>
+      <Card className="py-0">
         <CardContent className="p-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">
             Pickup Timings
@@ -111,7 +111,7 @@ export default function AdditionalDetails({
       </Card>
 
       {/* Terms and Conditions */}
-      <Card>
+      <Card className="py-0">
         <CardContent className="p-6">
           <Collapsible open={termsExpanded} onOpenChange={setTermsExpanded}>
             <CollapsibleTrigger className="flex items-center justify-between w-full">

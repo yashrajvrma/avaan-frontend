@@ -188,10 +188,9 @@ export default function DomesticShipmentPage() {
             {/* Navigation Buttons */}
             <div className="flex justify-between mt-8">
               <Button
-                variant="outline"
                 onClick={prevStep}
                 disabled={currentStep === 1}
-                className="flex items-center space-x-2 bg-transparent"
+                className="flex items-center space-x-2 text-neutral-50"
               >
                 <span>← Back</span>
               </Button>

@@ -55,7 +55,7 @@ export default function Payment({ total }: PaymentProps) {
   return (
     <div className="space-y-6">
       {/* Payment Methods */}
-      <Card>
+      <Card className="py-0">
         <CardContent className="p-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">
             Select Payment Method
@@ -94,7 +94,7 @@ export default function Payment({ total }: PaymentProps) {
 
       {/* Payment Details */}
       {selectedPayment === "card" && (
-        <Card>
+        <Card className="py-0">
           <CardContent className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               Card Details
@@ -168,7 +168,7 @@ export default function Payment({ total }: PaymentProps) {
       )}
 
       {selectedPayment === "upi" && (
-        <Card>
+        <Card className="py-0">
           <CardContent className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               UPI Payment
@@ -195,7 +195,7 @@ export default function Payment({ total }: PaymentProps) {
       )}
 
       {/* Security Features */}
-      <Card>
+      <Card className="py-0">
         <CardContent className="p-6">
           <div className="flex items-center space-x-3 mb-4">
             <Shield className="w-5 h-5 text-green-600" />
@@ -221,7 +221,7 @@ export default function Payment({ total }: PaymentProps) {
       </Card>
 
       {/* Payment Summary */}
-      <Card>
+      <Card className="py-0">
         <CardContent className="p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
             Payment Summary

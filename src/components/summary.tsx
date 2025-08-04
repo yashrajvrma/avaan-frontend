@@ -39,10 +39,10 @@ export default function Summary({
   return (
     <div className="space-y-6">
       {/* Baggage Details */}
-      <Card>
+      <Card className="py-0">
         <CardContent className="p-0">
           <Collapsible open={baggageExpanded} onOpenChange={setBaggageExpanded}>
-            <CollapsibleTrigger className="flex items-center justify-between w-full p-6 hover:bg-gray-50">
+            <CollapsibleTrigger className="flex items-center justify-between w-full py-6 px-6">
               <div className="flex items-center space-x-2">
                 <h2 className="text-xl font-semibold text-gray-900">
                   Baggage Details
@@ -93,10 +93,10 @@ export default function Summary({
       </Card>
 
       {/* Address Details */}
-      <Card>
+      <Card className="py-0">
         <CardContent className="p-0">
           <Collapsible open={addressExpanded} onOpenChange={setAddressExpanded}>
-            <CollapsibleTrigger className="flex items-center justify-between w-full p-6 hover:bg-gray-50">
+            <CollapsibleTrigger className="flex items-center justify-between w-full py-6 px-6">
               <div className="flex items-center space-x-2">
                 <h2 className="text-xl font-semibold text-gray-900">
                   Address Details

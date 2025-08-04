@@ -33,7 +33,7 @@ export default function ShippingDetails({
   return (
     <div className="space-y-6">
       {/* Enter Locations */}
-      <Card>
+      <Card className="py-0">
         <CardContent className="p-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">
             Enter Locations
@@ -78,7 +78,7 @@ export default function ShippingDetails({
       </Card>
 
       {/* Add Bags */}
-      <Card>
+      <Card className="py-0">
         <CardContent className="p-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Add Bags</h2>
           <div className="space-y-3">

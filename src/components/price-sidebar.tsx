@@ -34,7 +34,7 @@ export default function PriceSidebar({
   return (
     <div className="space-y-4 max-w-xs">
       {currentStep === 1 && (
-        <Card>
+        <Card className="py-0">
           <CardContent className="px-4">
             <div className="text-xl font-semibold tracking-tight text-neutral-900 mb-4">
               Choose Shipment Mode
@@ -151,27 +151,30 @@ export default function PriceSidebar({
       )}
 
       {currentStep === 2 && (
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold text-neutral-900 mb-4">
+        <Card className="py-0">
+          <CardContent className="px-5 py-5">
+            <div className="text-xl font-semibold text-neutral-900 mb-4">
               Price Summary
-            </h3>
+              <div className="w-full h-0.5 bg-neutral-300 mt-3"></div>
+            </div>
             <div className="space-y-3">
-              <div className="flex justify-between">
-                <span className="text-neutral-600">Freight Charge</span>
+              <div className="flex justify-between text-neutral-600">
+                <span className="">Freight Charge</span>
                 <span className="font-medium">₹381.35</span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-neutral-600">ODA Charges</span>
+              <div className="flex justify-between text-neutral-600">
+                <span className="">ODA Charges</span>
                 <span className="font-medium">₹850.00</span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-neutral-600">GST @18%</span>
+              <div className="flex justify-between text-neutral-600">
+                <span className="">GST @18%</span>
                 <span className="font-medium">₹221.64</span>
               </div>
-              <div className="border-t pt-3">
+              <div className="">
                 <div className="flex justify-between">
-                  <span className="font-semibold text-neutral-900">Total</span>
+                  <span className="font-semibold text-neutral-900 text-xl">
+                    Total
+                  </span>
                   <span className="text-xl font-bold text-neutral-900">
                     ₹{total}
                   </span>
@@ -179,7 +182,7 @@ export default function PriceSidebar({
               </div>
             </div>
 
-            <div className="mt-6 p-4 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg text-white">
+            {/* <div className="mt-6 p-4 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg text-white">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                   <span className="text-xs font-bold">💰</span>
@@ -189,54 +192,62 @@ export default function PriceSidebar({
                   <div className="text-sm opacity-90">with this booking</div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </CardContent>
         </Card>
       )}
 
       {(currentStep === 3 || currentStep === 4) && (
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold text-neutral-900 mb-4">
+        <Card className="py-0">
+          <CardContent className="px-5 py-5">
+            <div className="text-xl font-semibold text-neutral-900 mb-4">
               Price Summary
-            </h3>
+              <div className="w-full h-0.5 bg-neutral-300 mt-3"></div>
+            </div>
             <div className="space-y-3">
-              <div className="flex justify-between">
-                <span className="text-neutral-600">Freight Charge</span>
+              <div className="flex justify-between text-neutral-600">
+                <span className="">Freight Charge</span>
                 <span className="font-medium">₹381.35</span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-neutral-600">GST @18%</span>
-                <span className="font-medium">₹68.64</span>
+              <div className="flex justify-between text-neutral-600">
+                <span className="">ODA Charges</span>
+                <span className="font-medium">₹850.00</span>
               </div>
-              <div className="border-t pt-3">
+              <div className="flex justify-between text-neutral-600">
+                <span className="">GST @18%</span>
+                <span className="font-medium">₹221.64</span>
+              </div>
+              <div className="">
                 <div className="flex justify-between">
-                  <span className="font-semibold text-neutral-900">Total</span>
+                  <span className="font-semibold text-neutral-900 text-xl">
+                    Total
+                  </span>
                   <span className="text-xl font-bold text-neutral-900">
-                    ₹450
+                    ₹{total}
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="flex justify-between mt-6 py-4 px-4 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg text-white">
-              <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                {/* <span className="text-xl font-bold">💰</span> */}
-              </div>
-              <div>
-                <div className="text-center font-medium text-sm">
-                  Earn 5% Avaan Coins with this booking
+            {/* <div className="mt-6 p-4 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg text-white">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                  <span className="text-xs font-bold">💰</span>
+                </div>
+                <div>
+                  <div className="font-semibold">Earn 5% Avaan Coins</div>
+                  <div className="text-sm opacity-90">with this booking</div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </CardContent>
         </Card>
       )}
 
       {/* Coupon Code */}
-      <Card>
-        <CardContent className="p-6">
-          <h3 className="text-lg font-semibold text-neutral-900 mb-4">
+      <Card className="py-0">
+        <CardContent className="px-5 py-5">
+          <h3 className="text-xl font-semibold text-neutral-900 mb-4">
             Coupon Code
           </h3>
           <div className="flex space-x-2">
@@ -252,8 +263,8 @@ export default function PriceSidebar({
         </CardContent>
       </Card>
 
-      {currentStep === 2 && (
-        <Card>
+      {/* {currentStep === 2 && (
+        <Card className="py-0" >
           <CardContent className="p-6">
             <Collapsible open={thingsExpanded} onOpenChange={setThingsExpanded}>
               <CollapsibleTrigger className="flex items-center justify-between w-full">
@@ -277,7 +288,7 @@ export default function PriceSidebar({
             </Collapsible>
           </CardContent>
         </Card>
-      )}
+      )} */}
     </div>
   );
 }
