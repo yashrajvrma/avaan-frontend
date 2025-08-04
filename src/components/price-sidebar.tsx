@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 //   CollapsibleTrigger,
 // } from "@/components/ui/collapsible";
 // import { ChevronRight } from "lucide-react";
-import { useState } from "react";
+// import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface PriceSidebarProps {
@@ -29,7 +29,7 @@ export default function PriceSidebar({
   couponCode,
   setCouponCode,
 }: PriceSidebarProps) {
-  const [thingsExpanded, setThingsExpanded] = useState(false);
+  // const [thingsExpanded, setThingsExpanded] = useState(false);
 
   return (
     <div className="space-y-4 max-w-xs">
