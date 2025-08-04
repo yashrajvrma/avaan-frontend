@@ -36,6 +36,8 @@ export default function Summary({
 
   const selectedBags = bagOptions.filter((bag) => bag.quantity > 0);
 
+  console.log(`${shipFrom} and ${shipTo} ${selectedMode}`);
+
   return (
     <div className="space-y-6">
       {/* Baggage Details */}
