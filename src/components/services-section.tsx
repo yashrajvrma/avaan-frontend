@@ -8,30 +8,34 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import packageBag from "../../public/images/istockphoto-927771744-612x612.jpg";
+import airportFamily from "../../public/images/family-photo.avif";
+import packageStorage from "../../public/images/images.avif";
+import deliveryPackag from "../../public/images/delivery.jpg";
 
 const services = [
   {
-    title: "Xcess Baggage",
+    title: "Excess Baggage",
     desc: "Skip airline charges—send your extra luggage at a fraction of the cost.",
-    img: "/placeholder.svg?height=320&width=520",
+    img: packageBag,
     cta: "Explore",
   },
   {
     title: "Airport Transfers",
     desc: "Drop off or collect baggage at our airport kiosks—fast and hassle‑free.",
-    img: "/placeholder.svg?height=320&width=520",
+    img: airportFamily,
     cta: "Explore",
   },
   {
     title: "Storage",
     desc: "Secure, flexible short and long‑term options for your items.",
-    img: "/placeholder.svg?height=320&width=520",
+    img: packageStorage,
     cta: "Explore",
   },
   {
     title: "Package Delivery",
     desc: "From small to big parcels, timely doorstep deliveries.",
-    img: "/placeholder.svg?height=320&width=520",
+    img: deliveryPackag,
     cta: "Explore",
   },
 ];
@@ -40,36 +44,43 @@ export function ServicesSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 md:py-16">
       <div className="mb-8">
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-          Our Services
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+          Our
+          <span className="text-yellow-500"> Services</span>
         </h2>
-        <div className="mt-2 h-1 w-24 bg-yellow-500 rounded-full" />
+        <div className="w-full h-[2px] bg-neutral-300 relative rounded-sm mt-4">
+          <div className="w-[5%] h-[4px] bg-yellow-500 absolute top-[-1.5px] left-0 rounded-sm"></div>
+        </div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
         {services.map((s) => (
-          <Card key={s.title} className="overflow-hidden">
+          <Card key={s.title} className="overflow-hidden py-0">
             <CardHeader className="p-0">
-              <div className="relative h-56 w-full">
+              <div className="relative  w-full px-4 pt-4">
                 <img
-                  src={s.img || "/placeholder.svg"}
+                  src={s.img}
                   alt={s.title}
                   //   fill
-                  className="object-cover"
+                  className="object-cover rounded-2xl"
                 />
               </div>
             </CardHeader>
-            <CardContent className="pt-4">
-              <CardTitle>{s.title}</CardTitle>
-              <CardDescription className="mt-1">{s.desc}</CardDescription>
+            <CardContent className="pt-0">
+              <CardTitle className="text-xl ">{s.title}</CardTitle>
+              <CardDescription className="mt-1 text-sm">
+                {s.desc}
+              </CardDescription>
             </CardContent>
-            <CardFooter className="pt-2">
-              <Button
-                variant="link"
-                className="p-0 text-yellow-500 hover:text-yellow-500"
-              >
-                {s.cta} <ArrowRight className="ml-1 h-4 w-4" />
-              </Button>
+            <CardFooter className="pb-4">
+              <a className="flex items-center align-middle" href="/domestic">
+                <Button
+                  variant="secondary"
+                  className="p-0 hover:text-yellow-400 hover:cursor-pointer"
+                >
+                  {s.cta} <ArrowRight className="ml-1 h-4 w-4" />
+                </Button>
+              </a>
             </CardFooter>
           </Card>
         ))}
