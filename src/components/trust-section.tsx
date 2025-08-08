@@ -1,4 +1,5 @@
 import { ShieldCheck, Truck, IndianRupee, Clock } from "lucide-react";
+import packageImg from "../../public/images/depositphotos_165317552-stock-photo-cheerful-delivery-man-happy-young.jpg";
 
 const features = [
   {
@@ -21,34 +22,38 @@ const features = [
 
 export function TrustSection() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 md:py-16">
+    <section className="mx-auto max-w-7xl px-10 py-12 md:py-16">
+      {/* Heading */}
       <div className="mb-8">
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+        <div className="text-3xl md:text-4xl font-semibold tracking-tight">
           <span className="text-yellow-500">Package and Baggage Shipping?</span>{" "}
           Why Millions Trust Xcess
-        </h2>
-        <div className="mt-2 h-1 w-28 bg-yellow-500 rounded-full" />
+        </div>
+        <div className="w-full h-[2px] bg-gray-300 relative rounded-sm mt-4">
+          <div className="w-[15%] h-[4px] bg-yellow-600 absolute top-[-1.5px] left-0 rounded-sm"></div>
+        </div>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-10 items-center">
-        <ul className="space-y-6">
+      {/* Features + Image side by side */}
+      <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
+        {/* Features */}
+        <ul className="space-y-6 flex-1">
           {features.map((f) => (
-            <li key={f.text} className="flex items-start gap-4">
-              <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-50 text-yellow-500">
-                <f.icon className="h-5 w-5" />
+            <li key={f.text} className="flex items-center gap-4">
+              <div className="flex items-center justify-center rounded-lg bg-yellow-50 text-yellow-500 p-2">
+                <f.icon className="h-8 w-8" />
               </div>
-              <p className="text-muted-foreground">{f.text}</p>
+              <p className="text-foreground font-medium text-lg">{f.text}</p>
             </li>
           ))}
         </ul>
 
-        <div className="relative">
+        {/* Image */}
+        <div className="flex">
           <img
-            src="/images/trust.png"
+            src={packageImg}
             alt="Insured shipping card preview"
-            width={900}
-            height={700}
-            className="rounded-2xl border shadow-sm"
+            className="rounded-3xl border shadow-sm max-w-sm w-full h-96 object-cover"
           />
         </div>
       </div>
