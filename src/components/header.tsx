@@ -1,8 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { UserRound } from "lucide-react";
 import logo from "../../public/images/Excess-logo.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/domestic");
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,7 +35,10 @@ export default function Header() {
             </a> */}
           </nav>
           <div className="flex items-center space-x-4">
-            <Button className="bg-yellow-500 hover:bg-yellow-500 text-neutral-50">
+            <Button
+              onClick={handleClick}
+              className="bg-yellow-500 hover:bg-yellow-500 text-neutral-50 hover:cursor-pointer"
+            >
               Book Now
             </Button>
 

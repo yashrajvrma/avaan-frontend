@@ -1,8 +1,14 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import homeDelivery from "../../public/images/homeDeliveryImg.jpg";
+import { useNavigate } from "react-router-dom";
 
 export function Hero() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/domestic");
+  };
   return (
     <section className="relative mt-20 px-10">
       <div className="mx-auto max-w-7xl flex flex-col items-center gap-10">
@@ -19,7 +25,10 @@ export function Hero() {
             Real-time tracking and doorstep pickup.
           </div>
           <div className="mt-6 flex items-center gap-3">
-            <Button className="bg-yellow-500 hover:bg-yellow-500 hover:cursor-pointer hover:scale-110">
+            <Button
+              onClick={handleClick}
+              className="bg-yellow-500 hover:bg-yellow-500 hover:cursor-pointer hover:scale-110"
+            >
               Book Now
             </Button>
           </div>

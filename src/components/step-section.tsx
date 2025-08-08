@@ -7,6 +7,7 @@ import {
   Truck,
 } from "lucide-react";
 import ServicesImg from "../../public/images/services-img.jpg";
+import { useNavigate } from "react-router-dom";
 
 const steps = [
   {
@@ -37,6 +38,11 @@ const steps = [
 ];
 
 export function StepsSection() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/domestic");
+  };
   return (
     <section className="mx-auto max-w-7xl px-10 py-12 md:py-16 space-y-10">
       {/* Top: Title + Line + Description + Button */}
@@ -55,8 +61,11 @@ export function StepsSection() {
             Sending packages with Xcess is simple. Pack your baggage with
             package securely and we will do the rest.
           </div>
-          <Button className="bg-yellow-500 hover:bg-yellow-600 w-fit">
-            Book now
+          <Button
+            onClick={handleClick}
+            className="bg-yellow-500 hover:bg-yellow-600 w-fit"
+          >
+            Book Now
           </Button>
         </div>
       </div>

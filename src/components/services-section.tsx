@@ -12,6 +12,7 @@ import packageBag from "../../public/images/istockphoto-927771744-612x612.jpg";
 import airportFamily from "../../public/images/family-photo.avif";
 import packageStorage from "../../public/images/images.avif";
 import deliveryPackag from "../../public/images/delivery.jpg";
+import { useNavigate } from "react-router-dom";
 
 const services = [
   {
@@ -41,6 +42,11 @@ const services = [
 ];
 
 export function ServicesSection() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/domestic");
+  };
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 md:py-16">
       <div className="mb-8">
@@ -75,6 +81,7 @@ export function ServicesSection() {
             <CardFooter className="pb-4">
               <a className="flex items-center align-middle" href="/domestic">
                 <Button
+                  onClick={handleClick}
                   variant="secondary"
                   className="p-0 hover:text-yellow-400 hover:cursor-pointer"
                 >
