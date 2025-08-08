@@ -68,7 +68,7 @@ export function StepsSection() {
           <img
             src={ServicesImg}
             alt="Happy customer image with chat bubbles"
-            className="w-full h-full object-cover rounded-3xl mx-20"
+            className="w-full h-full object-cover rounded-3xl mx-20 border shadow-sm"
           />
         </div>
 
