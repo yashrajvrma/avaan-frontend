@@ -10,7 +10,7 @@ export default function Header() {
           <div className="flex items-center">
             <div className="text-2xl font-bold">
               <img src={logo} alt="Logo" className="w-28 h-20" />
-              {/* <span className="text-yellow-500">Excess img</span> */}
+              {/* <span className="text-yellow-500">Xcess img</span> */}
             </div>
           </div>
           <nav className="hidden md:flex space-x-8">

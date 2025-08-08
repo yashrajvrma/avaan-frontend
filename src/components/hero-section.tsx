@@ -1,4 +1,5 @@
 import trolleyImg from "../assets/istockphoto-160195860-612x612.jpg";
+import homeDelivery from "../../public/images/home-delivery.jpg";
 
 export default function HeroSection() {
   return (
@@ -12,13 +13,7 @@ export default function HeroSection() {
       </div>
 
       <div className="rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 ease-in-out transform w-full max-w-sm lg:max-w-sm border-neutral-100 border-4">
-        <img
-          src={trolleyImg}
-          width="10"
-          height="50"
-          className="w-full h-auto"
-          alt="trolley-img"
-        />
+        <img src={homeDelivery} className="w-full" alt="home-img" />
       </div>
     </div>
   );

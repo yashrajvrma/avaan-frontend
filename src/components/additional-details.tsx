@@ -60,11 +60,11 @@ export default function AdditionalDetails({
         </CardContent>
       </Card>
 
-      {/* Excess Protect */}
+      {/* Xcess Protect */}
       <Card className="py-0">
         <CardContent className="p-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            Excess Protect
+            Xcess Protect
           </h2>
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
             <div className="flex items-center space-x-2">
@@ -134,7 +134,7 @@ export default function AdditionalDetails({
                   I agree with the Terms & Conditions and guarantee that the
                   shipment does not contain any restricted items, declare that
                   the contents of the parcel are mentioned correctly.
-                  Declaration: See Excess Protection Terms and{" "}
+                  Declaration: See Xcess Protection Terms and{" "}
                   <a href="#" className="text-blue-600 hover:underline">
                     Conditions here
                   </a>
@@ -147,7 +147,7 @@ export default function AdditionalDetails({
                   className="text-sm text-gray-700 leading-relaxed"
                 >
                   I would like to receive offers/product/service related news,
-                  updates and communication from Excess.
+                  updates and communication from Xcess.
                 </Label>
               </div>
             </CollapsibleContent>

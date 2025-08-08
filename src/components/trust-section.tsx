@@ -25,7 +25,7 @@ export function TrustSection() {
       <div className="mb-8">
         <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
           <span className="text-yellow-500">Package and Baggage Shipping?</span>{" "}
-          Why Millions Trust Avaan
+          Why Millions Trust Xcess
         </h2>
         <div className="mt-2 h-1 w-28 bg-yellow-500 rounded-full" />
       </div>

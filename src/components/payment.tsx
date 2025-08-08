@@ -232,7 +232,7 @@ export default function Payment({ total }: PaymentProps) {
               <span className="font-medium">₹{(total - 100).toFixed(2)}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">Excess Protect</span>
+              <span className="text-gray-600">Xcess Protect</span>
               <span className="font-medium">₹100.00</span>
             </div>
             <div className="flex justify-between">

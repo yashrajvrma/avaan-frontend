@@ -188,7 +188,7 @@ export default function PriceSidebar({
                   <span className="text-xs font-bold">💰</span>
                 </div>
                 <div>
-                  <div className="font-semibold">Earn 5% Excess Coins</div>
+                  <div className="font-semibold">Earn 5% Xcess Coins</div>
                   <div className="text-sm opacity-90">with this booking</div>
                 </div>
               </div>
@@ -235,7 +235,7 @@ export default function PriceSidebar({
                   <span className="text-xs font-bold">💰</span>
                 </div>
                 <div>
-                  <div className="font-semibold">Earn 5% Excess Coins</div>
+                  <div className="font-semibold">Earn 5% Xcess Coins</div>
                   <div className="text-sm opacity-90">with this booking</div>
                 </div>
               </div>

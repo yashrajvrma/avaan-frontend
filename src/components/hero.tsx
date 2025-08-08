@@ -1,45 +1,36 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import homeDelivery from "../../public/images//homeDeliveryImg.jpg";
 
 export function Hero() {
   return (
-    <section className="relative">
-      <div className="mx-auto max-w-7xl grid lg:grid-cols-2 gap-6 px-4 py-10 md:py-14">
-        <div className="relative flex flex-col justify-center">
-          <Badge className="w-fit bg-yellow-50 text-yellow-500 hover:bg-yellow-50">
-            Excess Baggage
-          </Badge>
-          <h1 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
-            Door to Door Excess Baggage Delivery
-          </h1>
-          <p className="mt-4 text-muted-foreground max-w-prose">
-            Skip airline charges—save up to 80% on excess luggage delivery.
-            Real-time tracking and doorstep pickup.
-          </p>
-          <div className="mt-6 flex items-center gap-3">
-            <Button className="bg-yellow-500 hover:bg-yellow-600">
-              Book Now
-            </Button>
-            {/* <Button
-              variant="link"
-              className="text-rose-600 hover:text-rose-700 px-0"
-            >
-              Learn More…
-            </Button> */}
-          </div>
-        </div>
+    <section className="relative h-[520px] flex items-center mt-20">
+      {/* Background Image */}
+      <img
+        src={homeDelivery}
+        alt="Courier delivering baggage at doorstep"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
-        <div className="relative rounded-2xl overflow-hidden h-[420px] md:h-[520px]">
-          {/* Right image from your screenshot */}
-          <img
-            src="/images/hero.png"
-            alt="Courier delivering baggage at doorstep"
-            // fill
-            // priority
-            className="object-cover"
-          />
-          {/* Gradient overlay to improve text contrast on small screens */}
-          <div className="absolute inset-0 lg:hidden bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4">
+        <Badge className="w-fit bg-yellow-50 text-yellow-500 hover:bg-yellow-50">
+          Excess Baggage
+        </Badge>
+        <h1 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+          Door to Door Excess Baggage Delivery
+        </h1>
+        <p className="mt-4 text-white/80 max-w-prose">
+          Skip airline charges—save up to 80% on Excess luggage delivery.
+          Real-time tracking and doorstep pickup.
+        </p>
+        <div className="mt-6 flex items-center gap-3">
+          <Button className="bg-yellow-500 hover:bg-yellow-600">
+            Book Now
+          </Button>
         </div>
       </div>
     </section>

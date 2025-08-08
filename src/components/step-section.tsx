@@ -7,17 +7,18 @@ import {
   Package,
   Truck,
 } from "lucide-react";
+import ServicesImg from "../../public/images/services-img.jpg";
 
 const steps = [
   {
     icon: Package,
     title: "1. Choose a Service",
-    desc: "Select from Excess Baggage, Package Delivery, or Airport Transfer based on your shipping needs.",
+    desc: "Select from Xcess Baggage, Package Delivery, or Airport Transfer based on your shipping needs.",
   },
   {
     icon: MousePointerClick,
     title: "2. Book Online",
-    desc: "Use the Avaan website or app to book your delivery—choose domestic or international, enter details, and confirm.",
+    desc: "Use the Xcess website or app to book your delivery—choose domestic or international, enter details, and confirm.",
   },
   {
     icon: Hand,
@@ -40,24 +41,14 @@ export function StepsSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 md:py-16">
       <div className="grid lg:grid-cols-2 gap-10 items-start">
-        <div className="relative">
-          <img
-            src="/images/steps.png"
-            alt="Happy customer image with chat bubbles"
-            width={900}
-            height={700}
-            className="rounded-2xl border shadow-sm"
-          />
-        </div>
-
         <div className="flex flex-col gap-4">
           <div>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-              How to Ship with Avaan
+              How to Ship with Xcess
             </h2>
             <div className="mt-2 h-1 w-24 bg-yellow-500 rounded-full" />
             <p className="mt-4 text-muted-foreground">
-              Sending packages with Avaan is simple. Pack securely and we do the
+              Sending packages with Xcess is simple. Pack securely and we do the
               rest.
             </p>
           </div>
@@ -81,6 +72,13 @@ export function StepsSection() {
               Book now
             </Button>
           </div>
+        </div>
+        <div className="relative">
+          <img
+            src={ServicesImg}
+            alt="Happy customer image with chat bubbles"
+            className="rounded-2xl border shadow-sm"
+          />
         </div>
       </div>
     </section>

@@ -11,7 +11,7 @@ import {
 
 const services = [
   {
-    title: "Excess Baggage",
+    title: "Xcess Baggage",
     desc: "Skip airline charges—send your extra luggage at a fraction of the cost.",
     img: "/placeholder.svg?height=320&width=520",
     cta: "Explore",

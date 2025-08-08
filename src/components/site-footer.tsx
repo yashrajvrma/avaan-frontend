@@ -14,7 +14,7 @@ export function SiteFooter() {
             </div>
             <ul className="text-sm space-y-1 text-purple-100/80">
               <li>Kothaguda, Hitech City, Hyderabad, 500084</li>
-              <li>customerservice@avaanexcess.com</li>
+              <li>customerservice@XcessXcess.com</li>
               <li>+91 80694 05400</li>
             </ul>
           </div>
@@ -23,7 +23,7 @@ export function SiteFooter() {
             <h4 className="font-semibold mb-3">Services</h4>
             <ul className="text-sm space-y-2 text-purple-100/80">
               <li>
-                <a href="#">Excess Baggage</a>
+                <a href="#">Xcess Baggage</a>
               </li>
               <li>
                 <a href="#">Package Delivery</a>
@@ -90,7 +90,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-4 text-xs text-purple-100/70 flex flex-wrap items-center gap-x-6 gap-y-2">
-          <span>©2025 Avaan Excess. All rights reserved.</span>
+          <span>©2025 Xcess Xcess. All rights reserved.</span>
           <a href="#" className="hover:text-white">
             Terms
           </a>
