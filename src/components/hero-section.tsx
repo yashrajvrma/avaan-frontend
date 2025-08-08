@@ -1,4 +1,3 @@
-import trolleyImg from "../assets/istockphoto-160195860-612x612.jpg";
 import homeDelivery from "../../public/images/home-delivery.jpg";
 
 export default function HeroSection() {

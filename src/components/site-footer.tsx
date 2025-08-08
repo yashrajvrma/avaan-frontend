@@ -1,11 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import logo from "../../public/images/Excess-logo.png";
 import {
   Youtube,
   Facebook,
   Instagram,
-  Linkedin,
   MapPin,
   Mail,
   Phone,
