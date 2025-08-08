@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-white text-foreground">
+    <main className="min-h-screen text-foreground">
       <Header />
       <Hero />
       <StepsSection />

@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import homeDelivery from "../../public/images/homeDeliveryImg.jpg";
 import { useNavigate } from "react-router-dom";
@@ -10,8 +9,8 @@ export function Hero() {
     navigate("/domestic");
   };
   return (
-    <section className="relative mt-20 px-10">
-      <div className="mx-auto max-w-7xl flex flex-col items-center gap-10">
+    <section className="mt-20 px-10">
+      <div className="mx-auto sm:max-w-7xl max-w-5xl flex flex-col items-center gap-10">
         <div className="flex flex-col items-center max-w-5xl text-center mt-32 ">
           {/* <Badge className="w-fit bg-yellow-50 text-yellow-600 hover:bg-yellow-50">
             Excess Baggage

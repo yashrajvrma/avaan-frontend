@@ -71,13 +71,13 @@ export function StepsSection() {
       </div>
 
       {/* Bottom: Image + Steps */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 items-start">
         {/* Left: Image */}
-        <div className="w-sm h-full">
+        <div className="sm:w-sm w-xs h-full">
           <img
             src={ServicesImg}
             alt="Happy customer image with chat bubbles"
-            className="w-full h-full object-cover rounded-3xl mx-20 border shadow-sm"
+            className="w-full h-full object-cover rounded-3xl border shadow-sm"
           />
         </div>
 

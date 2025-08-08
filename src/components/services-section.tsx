@@ -48,7 +48,7 @@ export function ServicesSection() {
     navigate("/domestic");
   };
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12 md:py-16">
+    <section className="mx-auto max-w-7xl px-10 py-12 md:py-16">
       <div className="mb-8">
         <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
           Our
@@ -94,14 +94,14 @@ export function ServicesSection() {
       </div>
 
       {/* Reference mosaic of your original "Our Services" screenshot */}
-      <div className="sr-only">
+      {/* <div className="sr-only">
         <img
           src="/images/services.png"
           alt="Services reference screenshot"
           width={1200}
           height={800}
         />
-      </div>
+      </div> */}
     </section>
   );
 }
