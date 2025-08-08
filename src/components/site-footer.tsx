@@ -1,25 +1,50 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import logo from "../../public/images/Excess-logo.png";
+import {
+  Youtube,
+  Facebook,
+  Instagram,
+  Linkedin,
+  MapPin,
+  Mail,
+  Phone,
+} from "lucide-react";
 
 export function SiteFooter() {
   return (
     <footer className="mt-16 bg-yellow-600 text-yellow-50">
-      <div className="mx-auto max-w-7xl px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+      <div className="mx-auto max-w-7xl px-10 py-8">
+        <div className="flex justify-between gap-x-6">
           <div className="space-y-4">
             <div className="text-2xl font-extrabold">
-              <span className="text-white">ava</span>
+              {/* <span className="text-white">ava</span>
               <span className="text-rose-300">a</span>
-              <span className="text-white">n</span>
+              <span className="text-white">n</span> */}
+              <img src={logo} alt="Logo" className="w-28 h-20" />
+              <div className="flex items-center gap-4 hover:cursor-pointer mt-2">
+                <Youtube className="w-8 h-8 text-white opacity-75" />
+                <Facebook className="w-8 h-8 text-white opacity-75 " />
+                <Instagram className="w-8 h-8 text-white opacity-75" />
+              </div>
             </div>
-            <ul className="text-sm space-y-1 text-purple-100/80">
-              <li>Kothaguda, Hitech City, Hyderabad, 500084</li>
-              <li>customerservice@XcessXcess.com</li>
-              <li>+91 80694 05400</li>
-            </ul>
+          </div>
+          <div className="text-sm space-y-2 text-neutral-50 pt-5">
+            <div className="flex gap-x-2">
+              <MapPin className="w-5 h-5" />
+              Kothaguda, Hitech City, Hyderabad, 500084
+            </div>
+            <div className="flex gap-x-2">
+              <Mail className="w-4 h-4" />
+              customerservice@Xcess.com
+            </div>
+            <div className="flex gap-x-2">
+              <Phone className="w-4 h-4" />
+              +91 80694 05400
+            </div>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="font-semibold mb-3">Services</h4>
             <ul className="text-sm space-y-2 text-purple-100/80">
               <li>
@@ -35,27 +60,24 @@ export function SiteFooter() {
                 <a href="#">Storage</a>
               </li>
             </ul>
+          </div> */}
+
+          <div className="flex gap-x-2 pt-5">
+            {/* <h4 className="font-semibold mb-3">Company</h4> */}
+            <div className="flex justify-between gap-x-4 text-sm space-y-2 text-neutral-50">
+              <div>
+                <a href="#">About Us</a>
+              </div>
+              <div>
+                <a href="#">Contact</a>
+              </div>
+              <div>
+                <a href="#">How We Work</a>
+              </div>
+            </div>
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-3">Company</h4>
-            <ul className="text-sm space-y-2 text-purple-100/80">
-              <li>
-                <a href="#">About us</a>
-              </li>
-              <li>
-                <a href="#">Blogs</a>
-              </li>
-              <li>
-                <a href="#">Tracking</a>
-              </li>
-              <li>
-                <a href="#">Support</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h4 className="font-semibold">Subscribe</h4>
             <p className="text-sm text-purple-100/80">
               Get special offers, giveaways, and once‑in‑a‑lifetime deals.
@@ -86,23 +108,25 @@ export function SiteFooter() {
                 </Button>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-4 text-xs text-purple-100/70 flex flex-wrap items-center gap-x-6 gap-y-2">
-          <span>©2025 Xcess Xcess. All rights reserved.</span>
-          <a href="#" className="hover:text-white">
-            Terms
-          </a>
-          <a href="#" className="hover:text-white">
-            Privacy
-          </a>
-          <a href="#" className="hover:text-white">
-            Booking Policy
-          </a>
-          <a href="#" className="hover:text-white">
-            Sitemap
-          </a>
+        <div className="mt-5 pt-4 text-xs text-neutral-50 flex flex-col gap-x-6 gap-y-4">
+          <div className="w-full h-[1px] bg-neutral-300"></div>
+          <div className="flex justify-between">
+            <div>©2025 Xcess. All rights reserved.</div>
+            <div className="flex justify-center gap-x-4">
+              <a href="#" className="hover:text-white">
+                Terms
+              </a>
+              <a href="#" className="hover:text-white">
+                Privacy
+              </a>
+              <a href="#" className="hover:text-white">
+                Booking Policy
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
