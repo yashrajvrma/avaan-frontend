@@ -48,7 +48,7 @@ export function ServicesSection() {
     navigate("/domestic");
   };
   return (
-    <section className="mx-auto max-w-7xl px-10 py-12 md:py-16">
+    <section className="mx-auto max-w-7xl px-6 py-12 md:py-16">
       <div className="mb-8">
         <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
           Our
