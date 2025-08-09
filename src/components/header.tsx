@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <>
       <header className="bg-white shadow-md z-50 fixed top-0 w-full left-0">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="flex justify-between items-center h-20 min-w-0">
             <div className="flex items-center flex-shrink-0">
               <div className="text-2xl font-bold">
@@ -63,17 +63,12 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center space-x-2">
-              <Button variant="outline" size="icon" className="rounded-full">
+              {/* <Button variant="outline" size="icon" className="rounded-full">
                 <UserRound />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={toggleMenu}
-                className="rounded-full"
-              >
+              </Button> */}
+              <button className="text-neutral-900" onClick={toggleMenu}>
                 {isMenuOpen ? <X /> : <Menu />}
-              </Button>
+              </button>
             </div>
           </div>
         </div>
@@ -96,41 +91,48 @@ export default function Header() {
           </div>
 
           {/* Menu Content */}
-          <div className="flex flex-col h-full pt-8 pb-20">
+          <div className="flex flex-col pt-6 pb-20">
             <nav className="flex-1 px-6">
-              <div className="space-y-6">
+              <div className="space-y-2">
                 <a
                   href="#"
-                  className="block text-gray-800 hover:text-yellow-500 py-4 text-2xl font-medium border-b border-gray-100 transition-colors"
+                  className="block text-gray-900 hover:text-yellow-500 py-3 text-xl font-medium border-b border-gray-300 transition-colors"
                   onClick={closeMenu}
                 >
                   About
                 </a>
                 <a
                   href="#"
-                  className="block text-gray-800 hover:text-yellow-500 py-4 text-2xl font-medium border-b border-gray-100 transition-colors"
+                  className="block text-gray-900 hover:text-yellow-500 py-3 text-xl font-medium border-b border-gray-300 transition-colors"
                   onClick={closeMenu}
                 >
                   Contact
                 </a>
                 <a
                   href="#"
-                  className="block text-gray-800 hover:text-yellow-500 py-4 text-2xl font-medium border-b border-gray-100 transition-colors"
+                  className="block text-gray-900 hover:text-yellow-500 py-3 text-xl font-medium border-b border-gray-300 transition-colors"
                   onClick={closeMenu}
                 >
                   How We Work
+                </a>
+                <a
+                  href="#"
+                  className="block text-gray-900 hover:text-yellow-500 py-3 text-xl font-medium border-b border-gray-300 transition-colors"
+                  onClick={closeMenu}
+                >
+                  Account
                 </a>
               </div>
             </nav>
 
             {/* Bottom Section with Book Now Button */}
-            <div className="px-6 pt-8 border-t border-gray-200">
+            <div className="px-6 pt-8">
               <Button
                 onClick={() => {
                   handleClick();
                   closeMenu();
                 }}
-                className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-4 text-lg font-medium"
+                className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-6 text-lg font-medium"
               >
                 Book Now
               </Button>
