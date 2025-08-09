@@ -44,7 +44,7 @@ export function StepsSection() {
     navigate("/domestic");
   };
   return (
-    <section className="mx-auto max-w-7xl px-6 py-12 md:py-16 space-y-10">
+    <section className="mx-auto max-w-7xl px-6 py-12 md:py-16 space-y-10 mt-10">
       {/* Top: Title + Line + Description + Button */}
       <div className="flex flex-col md:flex-row  gap-x-10">
         <div className="flex flex-col sm:w-[50%] ">

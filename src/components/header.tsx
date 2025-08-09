@@ -27,23 +27,31 @@ export default function Header() {
           <div className="flex justify-between items-center h-20 min-w-0">
             <div className="flex items-center flex-shrink-0">
               <div className="text-2xl font-bold">
-                <img
-                  src={logo}
-                  alt="Logo"
-                  className="w-20 h-12 sm:w-28 sm:h-20 object-contain"
-                />
+                <a href="/">
+                  <img
+                    src={logo}
+                    alt="Logo"
+                    className="w-20 h-12 sm:w-28 sm:h-20 object-contain"
+                  />
+                </a>
               </div>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-600 hover:text-gray-900">
+              <a
+                href="/about"
+                className="text-neutral-800 neutralr:text-gray-900"
+              >
                 About
               </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">
+              <a
+                href="/contact"
+                className="text-neutral-800 hover:text-neutral-900"
+              >
                 Contact
               </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">
+              <a href="#" className="text-neutral-800 hover:text-neutral-900">
                 How We Work
               </a>
             </nav>

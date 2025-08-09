@@ -30,7 +30,7 @@ export function Hero() {
           </div>
         </div> */}
         <div className="flex flex-col items-center max-w-6xl text-center sm:mt-32 mt-20">
-          <div className="text-5xl sm:text-5xl md:text-7xl font-semibold tracking-tight text-neutral-900">
+          <div className="text-5xl sm:text-5xl md:text-8xl font-semibold tracking-tight text-neutral-900">
             {/* Mobile layout (hidden on sm and above) */}
             <div className="block sm:hidden">
               <div>Door to Door</div>
