@@ -114,28 +114,28 @@ export default function Header() {
             <nav className="flex-1 px-6">
               <div className="space-y-2">
                 <a
-                  href="#"
+                  href="/about"
                   className="block text-gray-900 hover:text-yellow-500 py-3 text-xl font-medium border-b border-gray-300 transition-colors"
                   onClick={closeMenu}
                 >
                   About
                 </a>
                 <a
-                  href="#"
+                  href="/contact"
                   className="block text-gray-900 hover:text-yellow-500 py-3 text-xl font-medium border-b border-gray-300 transition-colors"
                   onClick={closeMenu}
                 >
                   Contact
                 </a>
                 <a
-                  href="#"
+                  href="/work"
                   className="block text-gray-900 hover:text-yellow-500 py-3 text-xl font-medium border-b border-gray-300 transition-colors"
                   onClick={closeMenu}
                 >
                   How We Work
                 </a>
                 <a
-                  href="#"
+                  href="/account"
                   className="block text-gray-900 hover:text-yellow-500 py-3 text-xl font-medium border-b border-gray-300 transition-colors"
                   onClick={closeMenu}
                 >
