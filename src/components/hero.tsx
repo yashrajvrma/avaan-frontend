@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import homeDelivery from "../../public/images/homeDeliveryImg.jpg";
+import delivery from "../../public/images/woman-delivering-package-man.jpg";
 import { useNavigate } from "react-router-dom";
 
 export function Hero() {
@@ -8,65 +8,92 @@ export function Hero() {
   const handleClick = () => {
     navigate("/domestic");
   };
+
   return (
-    <section className="mt-20 px-6">
-      <div className="mx-auto sm:max-w-7xl max-w-5xl flex flex-col items-center gap-10">
-        {/* <div className="flex flex-col items-center max-w-6xl text-center mt-32 ">
-          <div className="text-5xl md:text-7xl font-semibold tracking-tight text-neutral-900 ">
-            Door to Door Excess
-            <div>Baggage Delivery</div>
-          </div>
-          <div className="mt-6 text-neutral-600 max-w-xl text-center">
-            Skip airline charges—save up to 80% on excess luggage delivery.
-            Real-time tracking and doorstep pickup.
-          </div>
-          <div className="mt-6 flex items-center gap-3">
-            <Button
-              onClick={handleClick}
-              className="bg-yellow-500 hover:bg-yellow-500 hover:cursor-pointer hover:scale-110"
-            >
-              Book Now
-            </Button>
-          </div>
-        </div> */}
-        <div className="flex flex-col items-center max-w-6xl text-center sm:mt-32 mt-20">
-          <div className="text-5xl sm:text-5xl md:text-8xl font-semibold tracking-tight text-neutral-900">
-            {/* Mobile layout (hidden on sm and above) */}
-            <div className="block sm:hidden">
-              <div>Door to Door</div>
-              <div>Excess Baggage</div>
-              <div>Delivery</div>
+    <section className="mt-20 relative">
+      {/* Desktop Layout */}
+      <div className="hidden lg:block h-screen">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${homeDelivery})` }}
+        ></div>
+
+        {/* Gradient Overlay from left to right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+
+        {/* Content */}
+        <div className="relative z-10 h-full flex items-center px-6">
+          <div className="w-full">
+            <div className="max-w-2xl">
+              {/* Logo */}
+              <div className="flex items-center mb-2">
+                <span className="text-neutral-200 px-1 font-medium text-sm">
+                  Excess Baggage
+                </span>
+              </div>
+
+              {/* Main Heading */}
+              <div className="text-5xl xl:text-7xl font-semibold text-neutral-50 tracking-tight mb-2">
+                Door to Door Excess
+                <div>Baggage Delivery</div>
+              </div>
+
+              {/* Subtitle */}
+              <p className="text-white/90 text-lg mb-5 mt-5 max-w-lg">
+                Skip airline charges — Save 80% on Excess Luggage Delivery
+              </p>
+
+              {/* Book Now Button */}
+              <button
+                onClick={handleClick}
+                className="bg-yellow-500 hover:bg-yellow-700 text-lg px-10 py-3 transition-all duration-200 hover:scale-105 rounded-lg text-neutral-50 hover:cursor-pointer"
+              >
+                Book Now
+              </button>
             </div>
-
-            {/* Desktop layout (hidden on mobile) */}
-            <div className="hidden sm:block">
-              Door to Door Excess
-              <div>Baggage Delivery</div>
-            </div>
-          </div>
-
-          <div className="mt-6 text-neutral-600 max-w-xl text-center">
-            Skip airline charges—save up to 80% on excess luggage delivery.
-            Real-time tracking and doorstep pickup.
-          </div>
-
-          <div className="mt-6 flex items-center gap-3">
-            <Button
-              onClick={handleClick}
-              className="bg-yellow-500 hover:bg-yellow-500 hover:cursor-pointer hover:scale-110"
-            >
-              Book Now
-            </Button>
           </div>
         </div>
+      </div>
 
-        {/* Right Image */}
-        <div className="flex-1 w-full ">
-          <img
-            src={homeDelivery}
-            alt="Courier delivering baggage at doorstep"
-            className="w-full h-auto rounded-2xl object-cover border shadow-sm"
-          />
+      {/* Mobile Layout */}
+      <div className="lg:hidden h-screen relative">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center  bg-no-repeat"
+          style={{ backgroundImage: `url(${delivery})` }}
+        ></div>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/20 bg-opacity-60"></div>
+
+        {/* Content positioned at bottom */}
+        <div className="relative z-10 h-full flex flex-col justify-end pb-24  px-6">
+          {/* Logo */}
+          <div className="flex items-center gap-3 mb-2">
+            <span className="text-neutral-200 font-medium text-sm">
+              Excess Baggage
+            </span>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-4xl sm:text-5xl font-semibold text-white leading-tight mb-4">
+            Door to Door Excess
+            <div>Baggage Delivery</div>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-white/90 text-lg mb-3">
+            Skip airline charges — Save 80% on Excess Luggage Delivery
+          </p>
+
+          {/* Book Now Button */}
+          <button
+            onClick={handleClick}
+            className="bg-yellow-500 hover:bg-yellow-700 text-lg px-10 py-3 transition-all duration-200 hover:scale-105 rounded-lg text-neutral-50 hover:cursor-pointer"
+          >
+            Book Now
+          </button>
         </div>
       </div>
     </section>
