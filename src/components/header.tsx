@@ -54,7 +54,10 @@ export default function Header() {
               >
                 Contact
               </a>
-              <a href="#" className="text-neutral-800 hover:text-neutral-900">
+              <a
+                href="/work"
+                className="text-neutral-800 hover:text-neutral-900"
+              >
                 How We Work
               </a>
             </nav>

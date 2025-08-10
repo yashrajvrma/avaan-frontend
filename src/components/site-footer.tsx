@@ -171,7 +171,7 @@ export function SiteFooter() {
           <div className="flex sm:flex-col flex-row gap-2 justify-between text-sm text-neutral-50 pt-2 md:pt-4">
             <a href="/about">About Us</a>
             <a href="/contact">Contact</a>
-            <a href="#">How We Work</a>
+            <a href="/work">How We Work</a>
           </div>
         </div>
 
