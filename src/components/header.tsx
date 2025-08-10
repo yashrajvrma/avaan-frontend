@@ -11,6 +11,9 @@ export default function Header() {
   const handleClick = () => {
     navigate("/domestic");
   };
+  const handleClickProfile = () => {
+    navigate("/account");
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -60,11 +63,16 @@ export default function Header() {
             <div className="hidden md:flex items-center space-x-4 flex-shrink-0">
               <Button
                 onClick={handleClick}
-                className="bg-yellow-500 hover:bg-yellow-600 text-white"
+                className="bg-yellow-500 hover:bg-yellow-600 text-white hover:cursor-pointer"
               >
                 Book Now
               </Button>
-              <Button variant="outline" size="icon" className="rounded-full">
+              <Button
+                onClick={handleClickProfile}
+                variant="outline"
+                size="icon"
+                className="rounded-full hover:cursor-pointer"
+              >
                 <UserRound />
               </Button>
             </div>

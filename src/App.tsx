@@ -4,6 +4,7 @@ import Domestic from "./pages/Domestic";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import AboutPage from "./pages/About";
+import AccountPage from "./pages/Account";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/domestic" element={<Domestic />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
+        <Route path="/account" element={<AccountPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
