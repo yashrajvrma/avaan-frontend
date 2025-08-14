@@ -57,7 +57,7 @@ export function StepsSection() {
         </div>
 
         <div className="flex flex-col sm:w-[50%] space-y-4">
-          <div className="sm:mt-0 mt-4 text-muted-foreground text-sm">
+          <div className="sm:mt-0 mt-4 text-base font-medium text-gray-600">
             Sending packages with Xcess is simple. Pack your baggage with
             package securely and we will do the rest.
           </div>
@@ -65,7 +65,7 @@ export function StepsSection() {
             onClick={handleClick}
             className="bg-yellow-500 hover:bg-yellow-600 w-full rounded-md py-2 font-medium text-neutral-100"
           >
-            Book a Pickup
+            Check Rates
           </button>
         </div>
       </div>
@@ -90,7 +90,9 @@ export function StepsSection() {
               </div>
               <div className="flex flex-col justify-center align-middle">
                 <div className="font-semibold text-lg">{s.title}</div>
-                <div className="text-sm text-muted-foreground">{s.desc}</div>
+                <div className="text-base font-medium text-gray-600">
+                  {s.desc}
+                </div>
               </div>
             </div>
           ))}

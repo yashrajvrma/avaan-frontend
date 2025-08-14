@@ -10,8 +10,7 @@ import {
 } from "@/components/ui/card";
 import packageBag from "../../public/images/istockphoto-927771744-612x612.jpg";
 import airportFamily from "../../public/images/family-photo.avif";
-import packageStorage from "../../public/images/images.avif";
-import deliveryPackag from "../../public/images/delivery.jpg";
+
 import weddingImg from "../../public/images/copper-events-01.jpg";
 import businessTrips from "../../public/images/businessTrips.jpg";
 import studentRelocation from "../../public/images/Student-Relocation-1-1024x656.jpg";

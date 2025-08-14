@@ -1,22 +1,31 @@
-import { ShieldCheck, Truck, IndianRupee, Clock } from "lucide-react";
+import { ShieldCheck, Truck, IndianRupee, Clock, MapPin } from "lucide-react";
 import packageImg from "../../public/images/depositphotos_165317552-stock-photo-cheerful-delivery-man-happy-young.jpg";
 
 const features = [
   {
+    icon: ShieldCheck,
+    text: "Professional handling with real-time tracking.",
+    title: "Safe & Secure",
+  },
+  {
     icon: Truck,
-    text: "We ship to over 25,000 Indian pincodes & 190+ countries",
+    text: "We handle everything from pickup to delivery.",
+    title: "Hassle-Free",
   },
   {
     icon: IndianRupee,
-    text: "Affordable rates starting at just ₹75*/kg",
+    text: "Transparent pricing without hidden costs.",
+    title: "Affordable",
+  },
+  {
+    icon: MapPin,
+    text: "From metro cities to remote towns, we've got you covered.",
+    title: "Nationwide Reach",
   },
   {
     icon: Clock,
-    text: "Guaranteed 4-day delivery across India with real-time tracking",
-  },
-  {
-    icon: ShieldCheck,
-    text: "Insurance cover of ₹5000 available",
+    text: "25+ years of proven logistics expertise.",
+    title: "Experience You Can Trust",
   },
 ];
 
@@ -39,11 +48,16 @@ export function TrustSection() {
         {/* Features */}
         <ul className="space-y-6 flex-1">
           {features.map((f) => (
-            <li key={f.text} className="flex items-center gap-4">
-              <div className="flex items-center justify-center rounded-lg bg-yellow-50 text-yellow-500 p-2">
+            <li key={f.text} className="flex items-start gap-4">
+              <div className="flex items-center justify-center rounded-lg bg-yellow-50 text-yellow-500 p-2 flex-shrink-0">
                 <f.icon className="h-8 w-8" />
               </div>
-              <p className="text-foreground font-medium text-lg">{f.text}</p>
+              <div>
+                <h3 className="text-foreground font-semibold text-lg mb-1">
+                  {f.title}
+                </h3>
+                <p className="text-gray-600 font-medium text-base">{f.text}</p>
+              </div>
             </li>
           ))}
         </ul>

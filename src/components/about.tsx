@@ -1,28 +1,28 @@
 import bannerImg from "../../public/images/aboutbanner.png";
 
 const About = () => {
-  const locations = [
-    {
-      city: "Hyderabad",
-      airport: "Rajiv Gandhi International Airport, Hyderabad",
-      details: "Terminal 1, Gate 8 and Visitor Departures",
-    },
-    {
-      city: "Delhi",
-      airport: "Indira Gandhi International Airport, Delhi",
-      details: "Terminal 3, Gate 4, Departures",
-    },
-    {
-      city: "Jaipur",
-      airport: "Jaipur International Airport",
-      details: "Terminal 1, Departures",
-    },
-    {
-      city: "Guwahati",
-      airport: "Lokpriya Gopinath Bordoloi International Airport, Guwahati",
-      details: "Terminal 1, Outside Departures",
-    },
-  ];
+  // const locations = [
+  //   {
+  //     city: "Hyderabad",
+  //     airport: "Rajiv Gandhi International Airport, Hyderabad",
+  //     details: "Terminal 1, Gate 8 and Visitor Departures",
+  //   },
+  //   {
+  //     city: "Delhi",
+  //     airport: "Indira Gandhi International Airport, Delhi",
+  //     details: "Terminal 3, Gate 4, Departures",
+  //   },
+  //   {
+  //     city: "Jaipur",
+  //     airport: "Jaipur International Airport",
+  //     details: "Terminal 1, Departures",
+  //   },
+  //   {
+  //     city: "Guwahati",
+  //     airport: "Lokpriya Gopinath Bordoloi International Airport, Guwahati",
+  //     details: "Terminal 1, Outside Departures",
+  //   },
+  // ];
 
   const features = [
     {
