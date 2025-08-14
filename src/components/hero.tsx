@@ -34,9 +34,9 @@ export function Hero() {
               </div>
 
               {/* Main Heading */}
-              <div className="text-5xl xl:text-7xl font-semibold text-neutral-50 tracking-tight mb-2">
-                Travel Light, Arrive Happy
-                {/* <div>Baggage Delivery</div> */}
+              <div className="text-5xl sm:text-7xl font-semibold text-neutral-50 tracking-tight mb-2">
+                Travel Light,
+                <div className="sm:pt-2 pt-0">Arrive Happy</div>
               </div>
 
               {/* Subtitle */}
