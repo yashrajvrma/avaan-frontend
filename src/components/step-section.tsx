@@ -11,8 +11,8 @@ import { useNavigate } from "react-router-dom";
 const steps = [
   {
     icon: Package,
-    title: "1. Choose a Service",
-    desc: "Select from Xcess Baggage, Package Delivery, or Airport Transfer based on your shipping needs.",
+    title: "1. Book Your Pickup",
+    desc: "Schedule online or by phone in just a few clicks.",
   },
   {
     icon: MousePointerClick,
@@ -21,18 +21,18 @@ const steps = [
   },
   {
     icon: Hand,
-    title: "3. Pickup or Drop",
-    desc: "We can pick up from your doorstep, or you can drop off at our airport kiosks.",
+    title: "3. Doorstep Collection",
+    desc: "Our team collects your bags from your home, office, or hotel.",
   },
   {
     icon: Truck,
-    title: "4. Track Your Shipment",
-    desc: "Get real-time updates through our tracking portal.",
+    title: "4. Safe Transit",
+    desc: "We securely pack, track, and transport your luggage nationwide",
   },
   {
     icon: CheckCircle2,
-    title: "5. Support & Rewards",
-    desc: "24/7 customer support and rewards on every booking.",
+    title: "5. On-Time Delivery",
+    desc: "Receive your bags at your destination, ready when you are.",
   },
 ];
 
@@ -65,7 +65,7 @@ export function StepsSection() {
             onClick={handleClick}
             className="bg-yellow-500 hover:bg-yellow-600 w-full rounded-md py-2 font-medium text-neutral-100"
           >
-            Book Now
+            Book a Pickup
           </button>
         </div>
       </div>

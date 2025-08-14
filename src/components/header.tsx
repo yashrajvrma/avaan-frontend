@@ -68,7 +68,7 @@ export default function Header() {
                 onClick={handleClick}
                 className="bg-yellow-500 hover:bg-yellow-600 text-white hover:cursor-pointer"
               >
-                Book Now
+                Book a Pickup
               </Button>
               <Button
                 onClick={handleClickProfile}

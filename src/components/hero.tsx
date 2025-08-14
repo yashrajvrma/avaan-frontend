@@ -23,7 +23,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center px-6">
+        <div className="relative z-10 h-full flex items-center px-20">
           <div className="w-full">
             <div className="max-w-2xl">
               {/* Logo */}
@@ -35,13 +35,14 @@ export function Hero() {
 
               {/* Main Heading */}
               <div className="text-5xl xl:text-7xl font-semibold text-neutral-50 tracking-tight mb-2">
-                Door to Door Excess
-                <div>Baggage Delivery</div>
+                Travel Light, Arrive Happy
+                {/* <div>Baggage Delivery</div> */}
               </div>
 
               {/* Subtitle */}
               <p className="text-white/90 text-lg mb-5 mt-5 max-w-lg">
-                Skip airline charges — Save 80% on Excess Luggage Delivery
+                Door-to-door luggage delivery across India — safe, reliable, and
+                affordable.
               </p>
 
               {/* Book Now Button */}
@@ -49,7 +50,7 @@ export function Hero() {
                 onClick={handleClick}
                 className="bg-yellow-500 hover:bg-yellow-700 text-lg px-10 py-3 transition-all duration-200 hover:scale-105 rounded-lg text-neutral-50 hover:cursor-pointer"
               >
-                Book Now
+                Book a Pickup
               </button>
             </div>
           </div>
@@ -68,7 +69,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-black/20 bg-opacity-60"></div>
 
         {/* Content positioned at bottom */}
-        <div className="relative z-10 h-full flex flex-col justify-end pb-24  px-6">
+        <div className="relative z-10 h-full flex flex-col justify-end pb-24 px-6">
           {/* Logo */}
           <div className="flex items-center gap-3 mb-2">
             <span className="text-neutral-200 font-medium text-sm">
@@ -78,13 +79,15 @@ export function Hero() {
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl font-semibold text-white leading-tight mb-4">
-            Door to Door Excess
-            <div>Baggage Delivery</div>
+            {/* Door to Door Excess
+            <div>Baggage Delivery</div> */}
+            Travel Light, Arrive Happy
           </h1>
 
           {/* Subtitle */}
           <p className="text-white/90 text-lg mb-3">
-            Skip airline charges — Save 80% on Excess Luggage Delivery
+            Door-to-door luggage delivery across India — safe, reliable, and
+            affordable.
           </p>
 
           {/* Book Now Button */}
@@ -92,7 +95,7 @@ export function Hero() {
             onClick={handleClick}
             className="bg-yellow-500 hover:bg-yellow-700 text-lg px-10 py-3 transition-all duration-200 hover:scale-105 rounded-lg text-neutral-50 hover:cursor-pointer"
           >
-            Book Now
+            Book a Pickup
           </button>
         </div>
       </div>
