@@ -12,31 +12,47 @@ import packageBag from "../../public/images/istockphoto-927771744-612x612.jpg";
 import airportFamily from "../../public/images/family-photo.avif";
 import packageStorage from "../../public/images/images.avif";
 import deliveryPackag from "../../public/images/delivery.jpg";
+import weddingImg from "../../public/images/copper-events-01.jpg";
+import businessTrips from "../../public/images/businessTrips.jpg";
+import studentRelocation from "../../public/images/Student-Relocation-1-1024x656.jpg";
+import elderlyTravel from "../../public/images/elderlyTravel.jpg";
 import { useNavigate } from "react-router-dom";
 
 const services = [
   {
-    title: "Excess Baggage",
-    desc: "Skip airline charges—send your extra luggage at a fraction of the cost.",
+    title: "Airline Travel",
+    desc: "Avoid heavy excess baggage fees with our cost-effective rates.",
     img: packageBag,
     cta: "Explore",
   },
   {
-    title: "Airport Transfers",
-    desc: "Drop off or collect baggage at our airport kiosks—fast and hassle‑free.",
+    title: "Vacation Travel",
+    desc: "Enjoy your trip without carrying bulky luggage.",
     img: airportFamily,
     cta: "Explore",
   },
   {
-    title: "Storage",
-    desc: "Secure, flexible short and long‑term options for your items.",
-    img: packageStorage,
+    title: "Official Business Trips",
+    desc: "Arrive ready to work, with your bags delivered to your office or hotel.",
+    img: businessTrips,
     cta: "Explore",
   },
   {
-    title: "Package Delivery",
-    desc: "From small to big parcels, timely doorstep deliveries.",
-    img: deliveryPackag,
+    title: "Weddings & Special Events",
+    desc: "Move clothes, gifts, and essentials with zero stress.",
+    img: weddingImg,
+    cta: "Explore",
+  },
+  {
+    title: "Student Relocation",
+    desc: "Send books, clothes, and personal items to your hostel or campus.",
+    img: studentRelocation,
+    cta: "Explore",
+  },
+  {
+    title: "Elderly & Family Travel",
+    desc: "Extra convenience and care for those who need it most.",
+    img: elderlyTravel,
     cta: "Explore",
   },
 ];
@@ -47,6 +63,7 @@ export function ServicesSection() {
   const handleClick = () => {
     navigate("/domestic");
   };
+
   return (
     <section className="mx-auto max-w-7xl px-6 py-12 md:py-16">
       <div className="mb-8">
