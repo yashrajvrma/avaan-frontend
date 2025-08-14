@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-white shadow-md z-50 fixed top-0 w-full left-0">
+      <header className="bg-yellow-50 shadow-md z-50 fixed top-0 w-full left-0">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="flex justify-between items-center h-20 min-w-0">
             <div className="flex items-center flex-shrink-0">
@@ -42,10 +42,7 @@ export default function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
-              <a
-                href="/about"
-                className="text-neutral-800 neutralr:text-gray-900"
-              >
+              <a href="/about" className="text-neutral-800 hover:text-gray-900">
                 About
               </a>
               <a

@@ -93,7 +93,7 @@ export function Hero() {
           {/* Book Now Button */}
           <button
             onClick={handleClick}
-            className="bg-yellow-500 hover:bg-yellow-700 text-lg px-10 py-3 transition-all duration-200 hover:scale-105 rounded-lg text-neutral-50 hover:cursor-pointer"
+            className="bg-yellow-500 hover:bg-yellow-600 text-base px-10 py-3 transition-all duration-200 hover:scale-105 rounded-lg text-neutral-50 hover:cursor-pointer"
           >
             Book a Pickup
           </button>
