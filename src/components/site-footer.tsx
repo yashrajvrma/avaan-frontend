@@ -139,7 +139,7 @@ import {
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 bg-yellow-600 text-yellow-50 w-full">
+    <footer className="mt-16 bg-yellow-500 text-yellow-50 w-full">
       <div className="flex flex-col mx-auto max-w-7xl px-6 md:px-10 py-8">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">

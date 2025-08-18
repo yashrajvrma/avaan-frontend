@@ -154,7 +154,7 @@ const Contact = () => {
               {/* Phone */}
               <div className="border-1 rounded-lg shadow-xs p-6 flex items-center space-x-4">
                 <div className=" p-3 rounded-full">
-                  <Phone className="w-10 h-10 text-yellow-500" />
+                  <Phone className="sm:w-10 sm:h-10 w-6 h-6 text-yellow-500" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-neutral-900 mb-1">
@@ -167,7 +167,7 @@ const Contact = () => {
               {/* Email */}
               <div className="border-1 rounded-lg shadow-xs p-6 flex items-center space-x-4">
                 <div className=" p-3 rounded-full">
-                  <Mail className="w-10 h-10 text-yellow-500" />
+                  <Mail className="sm:w-10 sm:h-10 w-6 h-6 text-yellow-500" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-neutral-900 mb-1">
@@ -180,7 +180,7 @@ const Contact = () => {
               {/* Address */}
               <div className="border-1 rounded-lg shadow-xs p-6 flex items-center space-x-4">
                 <div className=" p-3 rounded-full">
-                  <MapPin className="w-10 h-10 text-yellow-500" />
+                  <MapPin className="sm:w-10 sm:h-10 w-6 h-6 text-yellow-500" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-neutral-900 mb-1">
