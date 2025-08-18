@@ -24,6 +24,9 @@ const Contact = () => {
     // Handle form submission here
   };
 
+  const googleMapUrl =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.5292710653093!2d72.81665487593494!3d18.996385554465615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cfa40bc2cc35%3A0xe26bb585072d9ae!2sScorpion%20Containers%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1755456675122!5m2!1sen!2sin";
+
   return (
     <div className="min-h-screen mt-20">
       {/* Header Banner */}
@@ -40,7 +43,7 @@ const Contact = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto py-16 px-6">
+      <div className="max-w-7xl mx-auto py-16 px-6">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="rounded-lg py-6 px-5 border-1">
@@ -122,8 +125,8 @@ const Contact = () => {
 
           {/* Map and Contact Info */}
           <div className="space-y-8">
-            {/* <div className="rounded-lg border-1 overflow-hidden">
-              <div className="h-64 bg-gradient-to-br from-gray-200 to-gray-300 relative flex items-center justify-center">
+            <div className="p-2 w-full h-72 rounded-lg border-1 overflow-hidden">
+              {/* <div className="h-64 bg-gradient-to-br from-gray-200 to-gray-300 relative flex items-center justify-center">
                 <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
                   <div className="text-center text-gray-500">
                     <MapPin className="w-12 h-12 mx-auto mb-2" />
@@ -137,28 +140,34 @@ const Contact = () => {
                     <MapPin className="w-4 h-4" />
                   </div>
                 </div>
-              </div>
-            </div> */}
+              </div> */}
+              <iframe
+                title="template google map"
+                src={googleMapUrl}
+                className="map w-full h-full"
+                allowFullScreen
+              ></iframe>
+            </div>
 
             {/* Contact Information Cards */}
             <div className="space-y-4">
               {/* Phone */}
               <div className="border-1 rounded-lg shadow-xs p-6 flex items-center space-x-4">
-                <div className="bg-yellow-100 p-3 rounded-full">
-                  <Phone className="w-6 h-6 text-yellow-500" />
+                <div className=" p-3 rounded-full">
+                  <Phone className="w-10 h-10 text-yellow-500" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-neutral-900 mb-1">
-                    Ring us up
+                    Call Us At
                   </h3>
-                  <p className="text-gray-600">0 80694 09600</p>
+                  <p className="text-gray-600">+91 1800221945</p>
                 </div>
               </div>
 
               {/* Email */}
               <div className="border-1 rounded-lg shadow-xs p-6 flex items-center space-x-4">
-                <div className="bg-yellow-100 p-3 rounded-full">
-                  <Mail className="w-6 h-6 text-yellow-500" />
+                <div className=" p-3 rounded-full">
+                  <Mail className="w-10 h-10 text-yellow-500" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-neutral-900 mb-1">
@@ -170,15 +179,16 @@ const Contact = () => {
 
               {/* Address */}
               <div className="border-1 rounded-lg shadow-xs p-6 flex items-center space-x-4">
-                <div className="bg-yellow-100 p-3 rounded-full">
-                  <MapPin className="w-6 h-6 text-yellow-500" />
+                <div className=" p-3 rounded-full">
+                  <MapPin className="w-10 h-10 text-yellow-500" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-neutral-900 mb-1">
                     Visit us
                   </h3>
                   <p className="text-gray-600">
-                    Excess India Kathaguda, Hitech city, Hyderabad, 500084
+                    610, Shah & Nahar Industrial Estate, Dr.E.Moses Road, Worli,
+                    Mumbai, India - 400018
                   </p>
                 </div>
               </div>
