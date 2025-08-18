@@ -1,5 +1,6 @@
-import homeDelivery from "../../public/images/homeDeliveryImg.jpg";
+// import homeDelivery from "../../public/images/homeDeliveryImg.jpg";
 import delivery from "../../public/images/woman-delivering-package-man.jpg";
+import homeDelivery from "../../public/images/n7.jpeg";
 import { useNavigate } from "react-router-dom";
 
 export function Hero() {
