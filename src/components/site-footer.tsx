@@ -156,7 +156,10 @@ export function SiteFooter() {
           <div className="text-sm space-y-2 text-neutral-50 md:pt-4">
             <div className="flex gap-x-2 items-center">
               <MapPin className="w-4 h-4 flex-shrink-0" />
-              <span>Kothaguda, Hitech City, Hyderabad, 500084</span>
+              <span>
+                610, Shah & Nahar Industrial Estate, Dr.E.Moses Road, Worli,
+                Mumbai, India - 400018
+              </span>
             </div>
             <div className="flex gap-x-2 items-center">
               <Mail className="w-4 h-4" />
@@ -164,7 +167,7 @@ export function SiteFooter() {
             </div>
             <div className="flex gap-x-2 items-center">
               <Phone className="w-4 h-4" />
-              <span>+91 80694 05400</span>
+              <span>+91 1800221945</span>
             </div>
           </div>
           {/* Menu Links */}

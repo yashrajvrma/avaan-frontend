@@ -59,7 +59,7 @@ export default function ShipSteps() {
 
             {/* Title + Desc */}
             <h3 className="font-semibold text-lg mt-2">{step.title}</h3>
-            <p className="text-sm text-gray-600 mt-1 max-w-[220px]">
+            <p className="text-base text-gray-600 mt-1 max-w-[220px]">
               {step.desc}
             </p>
           </div>
