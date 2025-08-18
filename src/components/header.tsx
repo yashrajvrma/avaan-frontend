@@ -1,16 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { UserRound, Menu, X } from "lucide-react";
+import { UserRound, Menu, X, Info } from "lucide-react";
 import logo from "../../public/images/Excess-logo.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { Banner } from "./ui/banner";
 
 export default function Header() {
+  const [showBanner, setShowBanner] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // ✅ Show banner only on homepage, reset on refresh
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setShowBanner(true); // show fresh on each visit/refresh
+    } else {
+      setShowBanner(false);
+    }
+  }, [location]);
 
   const handleClick = () => {
     navigate("/domestic");
   };
+
+  const handleBannerClick = () => {
+    navigate("/domestic");
+  };
+
   const handleClickProfile = () => {
     navigate("/account");
   };
@@ -26,8 +43,22 @@ export default function Header() {
   return (
     <>
       <header className="bg-yellow-50 shadow-md z-50 fixed top-0 w-full left-0">
+        {showBanner && (
+          <Banner
+            show={showBanner}
+            onHide={() => setShowBanner(false)} // ✅ just hide, no localStorage
+            icon={<Info className="h-5 w-5 text-neutral-900 text-lg" />}
+            title="All offers will be displayed here."
+            action={{
+              label: "Check Offer",
+              onClick: handleBannerClick,
+            }}
+          />
+        )}
+
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="flex justify-between items-center h-20 min-w-0">
+            {/* Logo */}
             <div className="flex items-center flex-shrink-0">
               <div className="text-2xl font-bold">
                 <a href="/">
@@ -82,9 +113,6 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center space-x-2">
-              {/* <Button variant="outline" size="icon" className="rounded-full">
-                <UserRound />
-              </Button> */}
               <button className="text-neutral-900" onClick={toggleMenu}>
                 {isMenuOpen ? <X /> : <Menu />}
               </button>
@@ -96,7 +124,6 @@ export default function Header() {
       {/* Full Screen Mobile Navigation Menu */}
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 z-40 bg-white">
-          {/* Menu Header */}
           <div className="flex justify-between items-center h-20 px-4 border-b border-gray-200">
             <img src={logo} alt="Logo" className="w-20 h-12 object-contain" />
             <Button
@@ -109,7 +136,6 @@ export default function Header() {
             </Button>
           </div>
 
-          {/* Menu Content */}
           <div className="flex flex-col pt-6 pb-20">
             <nav className="flex-1 px-6">
               <div className="space-y-2">
@@ -144,7 +170,6 @@ export default function Header() {
               </div>
             </nav>
 
-            {/* Bottom Section with Book Now Button */}
             <div className="px-6 pt-8">
               <Button
                 onClick={() => {
@@ -160,7 +185,6 @@ export default function Header() {
         </div>
       )}
 
-      {/* Backdrop - Optional if you want to prevent body scroll */}
       {isMenuOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
