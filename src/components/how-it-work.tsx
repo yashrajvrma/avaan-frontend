@@ -1,4 +1,5 @@
 import deliveryImg from "../../public/images/how-we-work.jpg";
+import ShippingSteps from "./how-it-works/step-graph";
 
 const HowItWorks = () => {
   return (
@@ -88,6 +89,7 @@ const HowItWorks = () => {
           </div>
         </div>
       </div>
+      <ShippingSteps />
     </div>
   );
 };
