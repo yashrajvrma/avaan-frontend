@@ -49,14 +49,14 @@ export function Hero() {
             {/* Logo */}
             <div className="flex items-center mb-2">
               <span className="text-yellow-400 px-1 font-medium text-sm">
-                Door-To-Door
+                Excess Baggage
               </span>
             </div>
 
             {/* Main Heading */}
-            <div className="text-5xl sm:text-6xl font-semibold text-neutral-50 tracking-tight mb-2">
-              Door to Door Excess Baggage
-              <div className="sm:pt-2 pt-0">Delivery</div>
+            <div className="text-5xl sm:text-7xl font-semibold text-neutral-50 tracking-tight mb-2">
+              Travel Light,
+              <div className="sm:pt-2 pt-0">Arrive Happy</div>
             </div>
 
             {/* Subtitle */}
@@ -144,17 +144,17 @@ export function Hero() {
       <div className="lg:hidden h-screen relative">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[70vh]"
           style={{
             backgroundImage: `url(/images/woman-delivering-package-man.jpg)`,
           }}
         ></div>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/20 bg-opacity-60"></div>
+        <div className="absolute inset-0 bg-black/30 bg-opacity-100 h-[70vh]"></div>
 
         {/* Content positioned at bottom */}
-        <div className="relative z-10 h-full flex flex-col justify-end pb-24 px-6">
+        <div className="relative z-10 h-full flex flex-col pt-20 px-6">
           {/* Logo */}
           <div className="flex items-center gap-3 mb-2">
             <span className="text-neutral-200 font-medium text-sm">
@@ -163,9 +163,11 @@ export function Hero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl font-semibold text-white leading-tight mb-4">
-            Travel Light, Arrive Happy
-          </h1>
+          <div className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
+            Travel Light,
+            <br />
+            Arrive Happy
+          </div>
 
           {/* Subtitle */}
           <p className="text-white/90 text-lg mb-3">
@@ -174,34 +176,34 @@ export function Hero() {
           </p>
 
           {/* Book Now Button */}
-          <button
+          {/* <button
             onClick={handleClick}
             className="bg-yellow-500 hover:bg-yellow-600 text-base px-10 py-3 transition-all duration-200 hover:scale-105 rounded-lg text-neutral-50 hover:cursor-pointer"
           >
             Book a Pickup
-          </button>
+          </button> */}
         </div>
 
         {/* Mobile Booking Card - Fixed at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl p-6 shadow-2xl lg:hidden">
+        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-lg p-6 mx-6 shadow-lg lg:hidden">
           {/* Tab Header */}
           <div className="mb-4">
             <div className="inline-flex bg-gray-100 rounded-lg p-1">
-              <button className="bg-yellow-500 text-white py-3 px-4 text-sm font-medium rounded-md">
+              <button className="bg-yellow-500 text-white py-2 px-4 text-sm font-medium rounded-md">
                 Domestic
               </button>
             </div>
           </div>
 
           {/* Form Fields */}
-          <div className="grid grid-cols-2 gap-3 mb-4">
+          <div className="grid grid-cols-1 gap-3 mb-3">
             <input
               type="text"
               name="name"
               placeholder="Name*"
               value={formData.name}
               onChange={handleInputChange}
-              className="px-3 py-1 border border-gray-300 rounded-lg text-sm"
+              className="px-3 py-2 border border-gray-300 rounded-lg text-sm"
             />
             <input
               type="email"
@@ -213,22 +215,25 @@ export function Hero() {
             />
           </div>
 
-          <div className="flex mb-4">
-            <div className="flex items-center px-3 py-2 border border-gray-300 rounded-l-lg border-r-0 bg-gray-50">
-              {/* <span className="text-lg mr-1">🇮🇳</span> */}
-              <span className="text-gray-600 text-xs">+91</span>
+          <div className="flex flex-col gap-y-4">
+            <div className="flex">
+              <div className="flex items-center px-3 py-2 border border-gray-300 rounded-l-lg border-r-0 bg-gray-50">
+                {/* <span className="text-lg mr-1">🇮🇳</span> */}
+                <span className="text-gray-600 text-xs">+91</span>
+              </div>
+              <input
+                type="tel"
+                name="mobile"
+                placeholder="Mobile Number"
+                value={formData.mobile}
+                onChange={handleInputChange}
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-r-lg text-sm"
+              />
             </div>
-            <input
-              type="tel"
-              name="mobile"
-              placeholder="Mobile Number"
-              value={formData.mobile}
-              onChange={handleInputChange}
-              className="flex-1 px-3 py-2 border border-gray-300 rounded-r-lg text-sm"
-            />
+
             <button
               onClick={handleBookNow}
-              className="ml-3 bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 text-sm"
+              className=" bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 text-sm"
             >
               Book Now
             </button>
