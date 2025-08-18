@@ -42,6 +42,9 @@ export default function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
+              <a href="/" className="text-neutral-800 hover:text-gray-900">
+                Home
+              </a>
               <a href="/about" className="text-neutral-800 hover:text-gray-900">
                 About
               </a>
