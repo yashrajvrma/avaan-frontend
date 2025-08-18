@@ -130,7 +130,7 @@ export function ServicesSection() {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-16 text-center">
+      {/* <div className="mt-16 text-center">
         <div className="inline-flex items-center space-x-4 text-sm text-gray-500">
           <span>Reliable</span>
           <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
@@ -138,7 +138,7 @@ export function ServicesSection() {
           <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
           <span>Secure</span>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
