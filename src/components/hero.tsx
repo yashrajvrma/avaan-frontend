@@ -1,58 +1,140 @@
-// import homeDelivery from "../../public/images/homeDeliveryImg.jpg";
-import delivery from "../../public/images/woman-delivering-package-man.jpg";
-import homeDelivery from "../../public/images/n7.jpeg";
+import { useState } from "react";
+import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 
 export function Hero() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+  });
+
   const navigate = useNavigate();
 
   const handleClick = () => {
+    // Navigate to domestic page
+    console.log("Navigate to domestic");
+  };
+
+  const handleInputChange = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleBookNow = () => {
+    // Handle booking logic here
+    console.log("Booking data:", formData);
     navigate("/domestic");
   };
 
   return (
     <section className="mt-20 relative">
       {/* Desktop Layout */}
-      <div className="hidden lg:block h-screen">
+      <div className="hidden lg:block h-[70vh]">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${homeDelivery})` }}
+          style={{ backgroundImage: `url(/images/n7.jpeg)` }}
         ></div>
 
         {/* Gradient Overlay from left to right */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center px-20">
-          <div className="w-full">
-            <div className="max-w-2xl">
-              {/* Logo */}
-              <div className="flex items-center mb-2">
-                <span className="text-neutral-200 px-1 font-medium text-sm">
-                  Excess Baggage
-                </span>
+        <div className="relative z-10 h-full flex flex-col justify-center px-20 pt-40">
+          {/* Main Content */}
+          <div className="max-w-2xl mb-16 mt-20">
+            {/* Logo */}
+            <div className="flex items-center mb-2">
+              <span className="text-yellow-400 px-1 font-medium text-sm">
+                Door-To-Door
+              </span>
+            </div>
+
+            {/* Main Heading */}
+            <div className="text-5xl sm:text-6xl font-semibold text-neutral-50 tracking-tight mb-2">
+              Door to Door Excess Baggage
+              <div className="sm:pt-2 pt-0">Delivery</div>
+            </div>
+
+            {/* Subtitle */}
+            <p className="text-white/90 text-lg mb-5 mt-5 max-w-lg">
+              Door-to-door luggage delivery across India — safe, reliable, and
+              affordable.
+            </p>
+
+            {/* Book Now Button */}
+            <button
+              onClick={handleClick}
+              className="bg-yellow-500 hover:bg-yellow-700 text-lg px-10 py-3 transition-all duration-200 hover:scale-105 rounded-lg text-neutral-50 hover:cursor-pointer"
+            >
+              Book a Pickup
+            </button>
+          </div>
+
+          {/* Centered Booking Card */}
+          <div className="flex justify-center">
+            <div className="bg-white rounded-2xl p-8 shadow-lg w-full max-w-4xl">
+              {/* Tab Header */}
+              <div className="mb-1">
+                <div className="inline-flex bg-gray-100 rounded-lg p-1">
+                  <Button
+                    variant="outline"
+                    className="border-yellow-500 border-2 py-2 px-6 text-sm font-medium rounded-md"
+                  >
+                    Domestic
+                  </Button>
+                </div>
               </div>
 
-              {/* Main Heading */}
-              <div className="text-5xl sm:text-7xl font-semibold text-neutral-50 tracking-tight mb-2">
-                Travel Light,
-                <div className="sm:pt-2 pt-0">Arrive Happy</div>
+              {/* Form Fields in a row */}
+              <div className="flex gap-4 items-end">
+                <div className="flex-1">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name*"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent"
+                  />
+                </div>
+
+                <div className="flex-1">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="E-mail*"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent"
+                  />
+                </div>
+
+                <div className="flex flex-1">
+                  <div className="flex items-center px-3 py-3 border border-gray-300 rounded-l-lg border-r-0 bg-gray-50">
+                    {/* <span className="text-2xl mr-2">🇮🇳</span> */}
+                    <span className="text-gray-600 text-sm">+91</span>
+                  </div>
+                  <input
+                    type="tel"
+                    name="mobile"
+                    placeholder="Mobile Number"
+                    value={formData.mobile}
+                    onChange={handleInputChange}
+                    className="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:border-transparent"
+                  />
+                </div>
+
+                <button
+                  onClick={handleBookNow}
+                  className="bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200 whitespace-nowrap"
+                >
+                  Book Now
+                </button>
               </div>
-
-              {/* Subtitle */}
-              <p className="text-white/90 text-lg mb-5 mt-5 max-w-lg">
-                Door-to-door luggage delivery across India — safe, reliable, and
-                affordable.
-              </p>
-
-              {/* Book Now Button */}
-              <button
-                onClick={handleClick}
-                className="bg-yellow-500 hover:bg-yellow-700 text-lg px-10 py-3 transition-all duration-200 hover:scale-105 rounded-lg text-neutral-50 hover:cursor-pointer"
-              >
-                Book a Pickup
-              </button>
             </div>
           </div>
         </div>
@@ -62,8 +144,10 @@ export function Hero() {
       <div className="lg:hidden h-screen relative">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center  bg-no-repeat"
-          style={{ backgroundImage: `url(${delivery})` }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(/images/woman-delivering-package-man.jpg)`,
+          }}
         ></div>
 
         {/* Dark Overlay */}
@@ -80,8 +164,6 @@ export function Hero() {
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl font-semibold text-white leading-tight mb-4">
-            {/* Door to Door Excess
-            <div>Baggage Delivery</div> */}
             Travel Light, Arrive Happy
           </h1>
 
@@ -98,6 +180,59 @@ export function Hero() {
           >
             Book a Pickup
           </button>
+        </div>
+
+        {/* Mobile Booking Card - Fixed at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl p-6 shadow-2xl lg:hidden">
+          {/* Tab Header */}
+          <div className="mb-4">
+            <div className="inline-flex bg-gray-100 rounded-lg p-1">
+              <button className="bg-yellow-500 text-white py-3 px-4 text-sm font-medium rounded-md">
+                Domestic
+              </button>
+            </div>
+          </div>
+
+          {/* Form Fields */}
+          <div className="grid grid-cols-2 gap-3 mb-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name*"
+              value={formData.name}
+              onChange={handleInputChange}
+              className="px-3 py-1 border border-gray-300 rounded-lg text-sm"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="E-mail*"
+              value={formData.email}
+              onChange={handleInputChange}
+              className="px-3 py-2 border border-gray-300 rounded-lg text-sm"
+            />
+          </div>
+
+          <div className="flex mb-4">
+            <div className="flex items-center px-3 py-2 border border-gray-300 rounded-l-lg border-r-0 bg-gray-50">
+              {/* <span className="text-lg mr-1">🇮🇳</span> */}
+              <span className="text-gray-600 text-xs">+91</span>
+            </div>
+            <input
+              type="tel"
+              name="mobile"
+              placeholder="Mobile Number"
+              value={formData.mobile}
+              onChange={handleInputChange}
+              className="flex-1 px-3 py-2 border border-gray-300 rounded-r-lg text-sm"
+            />
+            <button
+              onClick={handleBookNow}
+              className="ml-3 bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 text-sm"
+            >
+              Book Now
+            </button>
+          </div>
         </div>
       </div>
     </section>
