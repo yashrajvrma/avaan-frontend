@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
-import indianMap from "../../../public/images/map-bg-remove.png";
+// import indianMap from "../../../public/images/map-bg-remove.png";
+import indianMap from "../../../public/images/n8.jpeg";
 
 const locations = [
   {
