@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 import truck from "../../public/images/shipping-truck.png";
@@ -10,7 +10,17 @@ export function Hero() {
     mobile: "",
   });
 
+  const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Trigger the animation after component mounts
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100); // Small delay to ensure smooth animation
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleClick = () => {
     // Navigate to domestic page
@@ -45,8 +55,14 @@ export function Hero() {
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-center px-20 pt-40">
-          {/* Main Content */}
-          <div className="max-w-2xl mb-16 mt-20">
+          {/* Main Content with Animation */}
+          <div
+            className={`max-w-2xl mb-16 mt-20 transition-all duration-1000 ease-out ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+          >
             {/* Logo */}
             <div className="flex items-center gap-x-2 mb-4">
               <div className="bg-neutral-50 rounded-lg px-3 py-2.5">
@@ -78,8 +94,14 @@ export function Hero() {
             </button>
           </div>
 
-          {/* Centered Booking Card */}
-          <div className="flex justify-center">
+          {/* Centered Booking Card with Animation */}
+          <div
+            className={`flex justify-center transition-all duration-1000 ease-out delay-300 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
+          >
             <div className="bg-white rounded-2xl p-8 shadow-lg w-full max-w-4xl">
               {/* Tab Header */}
               <div className="mb-1">
@@ -157,39 +179,43 @@ export function Hero() {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/30 bg-opacity-100 h-[70vh]"></div>
 
-        {/* Content positioned at bottom */}
+        {/* Content positioned at bottom with Animation */}
         <div className="relative z-10 h-full flex flex-col pt-20 px-6">
-          {/* Logo */}
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-neutral-200 font-medium text-sm">
-              Excess Baggage
-            </span>
-          </div>
-
-          {/* Main Heading */}
-          <div className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
-            Travel Light,
-            <br />
-            Arrive Happy
-          </div>
-
-          {/* Subtitle */}
-          <p className="text-white/90 text-lg mb-3">
-            Door-to-door luggage delivery across India — safe, reliable, and
-            affordable.
-          </p>
-
-          {/* Book Now Button */}
-          {/* <button
-            onClick={handleClick}
-            className="bg-yellow-500 hover:bg-yellow-600 text-base px-10 py-3 transition-all duration-200 hover:scale-105 rounded-lg text-neutral-50 hover:cursor-pointer"
+          <div
+            className={`transition-all duration-1000 ease-out ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
+            }`}
           >
-            Book a Pickup
-          </button> */}
+            {/* Logo */}
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-neutral-200 font-medium text-sm">
+                Excess Baggage
+              </span>
+            </div>
+
+            {/* Main Heading */}
+            <div className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
+              Travel Light,
+              <br />
+              Arrive Happy
+            </div>
+
+            {/* Subtitle */}
+            <p className="text-white/90 text-lg mb-3">
+              Door-to-door luggage delivery across India — safe, reliable, and
+              affordable.
+            </p>
+          </div>
         </div>
 
-        {/* Mobile Booking Card - Fixed at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 bg-white rounded-lg p-6 mx-6 shadow-lg lg:hidden">
+        {/* Mobile Booking Card - Fixed at bottom with Animation */}
+        <div
+          className={`absolute bottom-0 left-0 right-0 bg-white rounded-lg p-6 mx-6 shadow-lg lg:hidden transition-all duration-1000 ease-out delay-300 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           {/* Tab Header */}
           <div className="mb-4">
             <div className="inline-flex bg-gray-100 rounded-lg p-1">
