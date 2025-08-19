@@ -1,6 +1,4 @@
-// import { ShieldCheck, Truck, IndianRupee, Clock, MapPin } from "lucide-react";
-// import packageImg from "../../public/images/depositphotos_165317552-stock-photo-cheerful-delivery-man-happy-young.jpg";
-// import packageImg from "../../public/images/n9.jpeg";
+import { useState, useEffect, useRef } from "react";
 import map from "../../public/images/map-marker-check.png";
 import userExp from "../../public/images/userExp.png";
 import money from "../../public/images/money-transfer-smartphone.png";
@@ -37,8 +35,45 @@ const features = [
 ];
 
 export function TrustSection() {
+  const [visibleFeatures, setVisibleFeatures] = useState([]);
+  const [hasTriggered, setHasTriggered] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasTriggered) {
+            setHasTriggered(true);
+            // Animate features one by one from top to bottom with delay
+            features.forEach((_, index) => {
+              setTimeout(() => {
+                //@ts-ignore
+                setVisibleFeatures((prev) => [...prev, index]);
+              }, index * 150); // 150ms delay between each feature
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of the section is visible
+        rootMargin: "0px 0px -50px 0px", // Trigger slightly before the section comes into view
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [hasTriggered]);
+
   return (
-    <section className="mx-auto max-w-7xl px-6 py-12 md:py-16">
+    <section ref={sectionRef} className="mx-auto max-w-7xl px-6 py-12 md:py-16">
       {/* Heading */}
       <div className="mb-8">
         <div className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -52,12 +87,22 @@ export function TrustSection() {
 
       {/* Features + Image side by side */}
       <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
-        {/* Features */}
+        {/* Features with Animation */}
         <ul className="space-y-6 flex-1">
-          {features.map((f) => (
-            <li key={f.text} className="flex items-center gap-4">
+          {features.map((f, index) => (
+            <li
+              key={f.text}
+              className={`flex items-center gap-4 transition-all duration-600 ease-out ${
+                // @ts-ignore
+                visibleFeatures.includes(index)
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
+              }`}
+              style={{
+                transitionDelay: hasTriggered ? "0ms" : `${index * 150}ms`,
+              }}
+            >
               <div className="flex items-center justify-center rounded-lg text-yellow-500 p-2 flex-shrink-0">
-                {/* <f.icon className="h-8 w-8" /> */}
                 <img src={f.icon} alt="icon" className="w-16 h-16" />
               </div>
               <div>
@@ -72,8 +117,14 @@ export function TrustSection() {
           ))}
         </ul>
 
-        {/* Image */}
-        <div className="flex">
+        {/* Image with slight animation */}
+        <div
+          className={`flex transition-all duration-800 ease-out delay-500 ${
+            hasTriggered
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4"
+          }`}
+        >
           <img
             src={indiaMap}
             alt="Insured shipping card preview"
