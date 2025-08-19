@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
+import truck from "../../public/images/shipping-truck.png";
 
 export function Hero() {
   const [formData, setFormData] = useState({
@@ -47,20 +48,23 @@ export function Hero() {
           {/* Main Content */}
           <div className="max-w-2xl mb-16 mt-20">
             {/* Logo */}
-            <div className="flex items-center mb-2">
-              <span className="text-yellow-400 px-1 font-medium text-sm">
+            <div className="flex items-center gap-x-2 mb-4">
+              <div className="bg-neutral-50 rounded-lg px-3 py-2.5">
+                <img src={truck} alt="shipping truck img" className="w-8 h-8" />
+              </div>
+              <span className="text-neutral-50 px-1 font-medium text-base">
                 Excess Baggage
               </span>
             </div>
 
             {/* Main Heading */}
-            <div className="text-5xl sm:text-7xl font-semibold text-neutral-50 tracking-tight mb-2">
+            <div className="text-5xl sm:text-7xl font-bold text-neutral-50 tracking-tight mb-2">
               Travel Light,
               <div className="sm:pt-2 pt-0">Arrive Happy</div>
             </div>
 
             {/* Subtitle */}
-            <p className="text-white/90 text-lg mb-5 mt-5 max-w-lg">
+            <p className="text-white/90 text-lg font-medium mb-5 mt-5 max-w-lg">
               Door-to-door luggage delivery across India — safe, reliable, and
               affordable.
             </p>
@@ -68,7 +72,7 @@ export function Hero() {
             {/* Book Now Button */}
             <button
               onClick={handleClick}
-              className="bg-yellow-500 hover:bg-yellow-700 text-lg px-10 py-3 transition-all duration-200 hover:scale-105 rounded-lg text-neutral-50 hover:cursor-pointer"
+              className="bg-yellow-500 hover:scale-105 text-md px-10 py-3 transition-all duration-200 rounded-lg text-neutral-50 hover:cursor-pointer font-medium"
             >
               Book a Pickup
             </button>

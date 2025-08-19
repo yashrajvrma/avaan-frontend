@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-yellow-50 shadow-md z-50 fixed top-0 w-full left-0">
+      <header className="bg-gradient-to-tr from-neutral-50 to-yellow-200 shadow-md z-50 fixed top-0 w-full left-0">
         {showBanner && (
           <Banner
             show={showBanner}
@@ -73,22 +73,16 @@ export default function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
-              <a href="/" className="text-neutral-800 hover:text-gray-900">
+              <a href="/" className="text-neutral-900 ">
                 Home
               </a>
-              <a href="/about" className="text-neutral-800 hover:text-gray-900">
+              <a href="/about" className="text-neutral-900 ">
                 About
               </a>
-              <a
-                href="/contact"
-                className="text-neutral-800 hover:text-neutral-900"
-              >
+              <a href="/contact" className="text-neutral-900 ">
                 Contact
               </a>
-              <a
-                href="/work"
-                className="text-neutral-800 hover:text-neutral-900"
-              >
+              <a href="/work" className="text-neutral-900">
                 How We Work
               </a>
             </nav>
