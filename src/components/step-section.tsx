@@ -8,30 +8,36 @@ import {
 import { useState, useEffect, useRef } from "react";
 import ServicesImg from "../../public/images/services-img.jpg";
 import { useNavigate } from "react-router-dom";
+import pickup from "../../public/images/picking.png";
+import boxOpen from "../../public/images/box-open.png";
+import truck from "../../public/images/shipping-truck.png";
+import clock from "../../public/images/time-fast.png";
+import order from "../../public/images/digital-payment.png";
+import packageImg from "../../public/images/n9.jpeg";
 
 const steps = [
   {
-    icon: Package,
+    icon: boxOpen,
     title: "1. Book Your Pickup",
     desc: "Schedule online or by phone in just a few clicks.",
   },
   {
-    icon: MousePointerClick,
+    icon: order,
     title: "2. Book Online",
     desc: "Use the Xcess website or app to book your delivery—choose domestic or international, enter details, and confirm.",
   },
   {
-    icon: Hand,
+    icon: pickup,
     title: "3. Doorstep Collection",
     desc: "Our team collects your bags from your home, office, or hotel.",
   },
   {
-    icon: Truck,
+    icon: truck,
     title: "4. Safe Transit",
     desc: "We securely pack, track, and transport your luggage nationwide",
   },
   {
-    icon: CheckCircle2,
+    icon: clock,
     title: "5. On-Time Delivery",
     desc: "Receive your bags at your destination, ready when you are.",
   },
@@ -112,11 +118,11 @@ export function StepsSection() {
       </div>
 
       {/* Bottom: Image + Steps */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-10 items-start">
+      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-20 pt-10 items-start">
         {/* Left: Image */}
-        <div className="sm:w-sm h-full sm:mx-auto">
+        <div className="sm:w-lg h-full sm:mx-auto">
           <img
-            src={ServicesImg}
+            src={packageImg}
             alt="Happy customer image with chat bubbles"
             className="w-full h-full object-cover rounded-3xl border shadow-sm"
           />
@@ -127,7 +133,7 @@ export function StepsSection() {
           {steps.map((s, index: any) => (
             <div
               key={s.title}
-              className={`flex gap-2 transition-all duration-700 ease-out ${
+              className={`flex gap-x-8 gap-y-2 transition-all duration-700 ease-out ${
                 // @ts-ignore
                 visibleSteps.includes(index)
                   ? "opacity-100 translate-x-0"
@@ -138,11 +144,14 @@ export function StepsSection() {
               }}
             >
               <div className="mt-1 flex h-20 w-20 shrink-0 items-center align-middle rounded-full text-yellow-500">
-                <s.icon className="h-14 w-14" />
+                {/* <s.icon className="h-14 w-14" /> */}
+                <img src={s.icon} alt="all icons" className="w-16 h-16" />
               </div>
               <div className="flex flex-col justify-center align-middle">
-                <div className="font-semibold text-lg">{s.title}</div>
-                <div className="text-base font-medium text-gray-600">
+                <div className="font-semibold text-2xl tracking-tight">
+                  {s.title}
+                </div>
+                <div className="text-base font-normal text-gray-600">
                   {s.desc}
                 </div>
               </div>
