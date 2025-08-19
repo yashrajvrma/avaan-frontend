@@ -1,6 +1,6 @@
-import { ShieldCheck, Truck, IndianRupee, Clock, MapPin } from "lucide-react";
+// import { ShieldCheck, Truck, IndianRupee, Clock, MapPin } from "lucide-react";
 // import packageImg from "../../public/images/depositphotos_165317552-stock-photo-cheerful-delivery-man-happy-young.jpg";
-import packageImg from "../../public/images/n9.jpeg";
+// import packageImg from "../../public/images/n9.jpeg";
 import map from "../../public/images/map-marker-check.png";
 import userExp from "../../public/images/userExp.png";
 import money from "../../public/images/money-transfer-smartphone.png";

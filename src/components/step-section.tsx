@@ -1,12 +1,5 @@
-import {
-  CheckCircle2,
-  Hand,
-  MousePointerClick,
-  Package,
-  Truck,
-} from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import ServicesImg from "../../public/images/services-img.jpg";
+// import ServicesImg from "../../public/images/services-img.jpg";
 import { useNavigate } from "react-router-dom";
 import pickup from "../../public/images/picking.png";
 import boxOpen from "../../public/images/box-open.png";

@@ -3,9 +3,9 @@ import bannerImg from "../../public/images/about-wide.cd72013b.jpg";
 import { KeyLocations } from "./about/key-locations";
 import { MeetFounder } from "./about/meet-founder";
 import sheildCheck from "../../public/images/shield-check.png";
-import cost from "../../public/images/investment.png";
-import truck from "../../public/images/truck-box.png";
-import reliable from "../../public/images/track.png";
+import cost from "../../public/images/passive-income.png";
+import convenient from "../../public/images/Untitled-1.png";
+import reliable from "../../public/images/Untitled-3.png";
 
 const About = () => {
   // const features = [
@@ -35,7 +35,7 @@ const About = () => {
   const features = [
     { label: "Safe", icon: sheildCheck },
     { label: "Cost-Effective", icon: cost },
-    { label: "Convenient", icon: truck },
+    { label: "Convenient", icon: convenient },
     { label: "Reliable", icon: reliable },
   ];
   return (

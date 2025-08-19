@@ -56,7 +56,7 @@ export function KeyLocations() {
               {locations.map((location, index) => (
                 <Card
                   key={index}
-                  className="bg-yellow-50/20 shadow-sm transition-shadow p-0 w-xs"
+                  className="bg-gradient-to-br from-neutral-50 to-yellow-200 shadow-sm transition-shadow p-0 w-xs"
                 >
                   <CardContent className="px-6 py-10">
                     <div className="text-xl font-semibold text-neutral-900 mb-2">
