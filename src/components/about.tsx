@@ -1,4 +1,257 @@
-// import bannerImg from "../../public/images/aboutbanner.png";
+// // import bannerImg from "../../public/images/aboutbanner.png";
+// import bannerImg from "../../public/images/about-wide.cd72013b.jpg";
+// import { KeyLocations } from "./about/key-locations";
+// import { MeetFounder } from "./about/meet-founder";
+// import sheildCheck from "../../public/images/shield-check.png";
+// import cost from "../../public/images/passive-income.png";
+// import convenient from "../../public/images/Untitled-1.png";
+// import reliable from "../../public/images/Untitled-3.png";
+
+// const About = () => {
+//   // const features = [
+//   //   {
+//   //     title: "Safe",
+//   //     description: "Secure handling, packaging, and real-time tracking.",
+//   //     icon: "🛡️",
+//   //   },
+//   //   {
+//   //     title: "Convenient",
+//   //     description: "Hands-free travel without the hassle of carrying bags.",
+//   //     icon: "✈️",
+//   //   },
+//   //   {
+//   //     title: "Cost-Effective",
+//   //     description:
+//   //       "Transparent, affordable rates for individuals, families, and groups.",
+//   //     icon: "💰",
+//   //   },
+//   //   {
+//   //     title: "Reliable",
+//   //     description: "On-time pickups and deliveries every time.",
+//   //     icon: "⏰",
+//   //   },
+//   // ];
+
+//   const features = [
+//     { label: "Safe", icon: sheildCheck },
+//     { label: "Cost-Effective", icon: cost },
+//     { label: "Convenient", icon: convenient },
+//     { label: "Reliable", icon: reliable },
+//   ];
+//   return (
+//     <div className="min-h-screen mt-20">
+//       {/* Hero Section with background image */}
+//       <div className="relative bg-gray-800 py-20 px-4">
+//         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+//         <div
+//           className="absolute inset-0 bg-cover bg-center opacity-50"
+//           style={{
+//             backgroundImage: `url(${bannerImg})`,
+//           }}
+//         ></div>
+//         <div className="relative max-w-7xl mx-auto sm:text-center text-start">
+//           <p className="text-yellow-500 text-sm font-bold uppercase tracking-tight sm:mb-4 mb-2">
+//             ABOUT US
+//           </p>
+//           <h1 className="text-3xl md:text-5xl text-neutral-50  font-semibold mb-6">
+//             Seamless Logistics: Excess Baggage
+//             <br />
+//             and Timely Delivery, Worldwide
+//           </h1>
+//         </div>
+//       </div>
+
+//       {/* About Us Section */}
+//       <div className="py-16 px-4">
+//         <div className="max-w-7xl mx-auto">
+//           <div className="mb-12">
+//             <div className="text-3xl md:text-4xl font-semibold text-neutral-900 mb-6">
+//               About <span className="text-yellow-500">Xcess Luggage</span>
+//             </div>
+//             <div className="w-full h-[2px] bg-gray-300 relative rounded-sm mt-4">
+//               <div className="w-[15%] h-[4px] bg-yellow-500 absolute top-[-1.5px] left-0 rounded-sm"></div>
+//             </div>
+//           </div>
+
+//           <div className="flex flex-col justify-center max-w-7xl mx-auto">
+//             <div className="mb-12">
+//               {/* <p className="text-lg text-neutral-900 mb-6">
+//                 With decades of logistics expertise,{" "}
+//                 <span className="font-semibold text-yellow-600">
+//                   Xcess Luggage
+//                 </span>{" "}
+//                 was founded with a simple mission — to let you travel light
+//                 while we take care of your bags. Our nationwide coverage spans
+//                 thousands of pin codes, reaching metros and remote towns alike.
+//               </p>
+//               <p className="text-lg text-neutral-900 leading-relaxed">
+//                 We believe luggage delivery should be seamless, secure, and
+//                 stress-free for every traveler.
+//               </p> */}
+//               <p className="text-lg text-neutral-900 mb-6">
+//                 We are India’s trusted luggage transport experts with over 25
+//                 years of experience in logistics and customer care. Dedicated to
+//                 making travel simpler and safer, we go beyond moving luggage —
+//                 we deliver peace of mind.
+//               </p>
+//               <p className="text-lg text-neutral-900 mb-6">
+//                 Inspired by the warmth, reliability, and service excellence of
+//                 our flagship group, we’ve built a reputation for delivering on
+//                 promises, creating lasting relationships, and setting benchmarks
+//                 in reliability. From the friendly smile at your doorstep to the
+//                 meticulous care we take in handling your belongings — every step
+//                 reflects our commitment to making your journey worry-free.
+//               </p>
+//             </div>
+
+//             {/* <div className="flex justify-between gap-x-4"> */}
+//             {/* <div className="p-8 rounded-lg transition-shadow duration-300 bg-yellow-50/20 border">
+//                 <div className="flex items-center mb-4">
+//                   <div className="text-xl font-semibold text-yellow-500">
+//                     Our Mission
+//                   </div>
+//                 </div>
+//                 <p className="text-neutral-900 leading-relaxed">
+//                   With years of expertise in logistics and customer care, our
+//                   mission is to help you focus on your trip — not your bags.
+//                 </p>
+//               </div> */}
+
+//             <div className="flex flex-wrap justify-between mt-5 gap-y-10">
+//               {features.map((feature, idx) => (
+//                 <div
+//                   key={idx}
+//                   className="flex flex-wrap justify-center items-center align-middle px-10 gap-x-6"
+//                 >
+//                   <img
+//                     src={feature.icon}
+//                     alt={feature.label}
+//                     width={60}
+//                     height={60}
+//                     className="w-16 h-16"
+//                   />
+//                   <span className="text-gray-900 text-xl font-semibold">
+//                     {feature.label}
+//                   </span>
+//                 </div>
+//               ))}
+//             </div>
+//             {/* </div> */}
+
+//             {/* Features Grid */}
+//             {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+//               {features.map((feature, index) => (
+//                 <div
+//                   key={index}
+//                   className="text-center p-6 bg-yellow-50 rounded-lg hover:shadow-lg transition-shadow duration-300"
+//                 >
+//                   <div className="text-4xl mb-4">{feature.icon}</div>
+//                   <h3 className="text-xl font-semibold text-yellow-600 mb-3">
+//                     {feature.title}
+//                   </h3>
+//                   <p className="text-neutral-900 text-sm leading-relaxed">
+//                     {feature.description}
+//                   </p>
+//                 </div>
+//               ))}
+//             </div> */}
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Mission and Vision Section */}
+//       {/* <div className="py-16 px-4">
+//         <div className="max-w-7xl mx-auto">
+//           <div className="mb-12">
+//             <div className="text-3xl md:text-4xl font-semibold text-neutral-900 mb-4 text-center">
+//               Our <span className="text-yellow-500">Mission and Vision</span>
+//             </div>
+//             <div className="w-full h-[2px] bg-gray-300 relative rounded-sm mt-4">
+//               <div className="w-[8%] h-[4px] bg-yellow-500 absolute top-[-1.5px] left-1/2 transform -translate-x-1/2 rounded-sm"></div>
+//             </div>
+//           </div>
+
+//           <div className="grid md:grid-cols-2 gap-12">
+//             <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+//               <div className="flex items-center mb-4">
+//                 <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
+//                   <span className="text-white text-sm font-bold">M</span>
+//                 </div>
+//                 <h3 className="text-xl font-semibold text-yellow-500">
+//                   Our Mission
+//                 </h3>
+//               </div>
+//               <p className="text-neutral-900 leading-relaxed">
+//                 To simplify global travel by providing secure, seamless and
+//                 on-time delivery of excess baggage and packages - relieving
+//                 travel stress and enriching every journey with peace of mind.
+//               </p>
+//             </div>
+
+//             <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+//               <div className="flex items-center mb-4">
+//                 <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
+//                   <span className="text-white text-sm font-bold">V</span>
+//                 </div>
+//                 <h3 className="text-xl font-semibold text-yellow-500">
+//                   Our Vision
+//                 </h3>
+//               </div>
+//               <p className="text-neutral-900 leading-relaxed">
+//                 To transform the future of travel and logistics by being the
+//                 world's most trusted solution for effortless baggage and package
+//                 delivery - offering unmatched reliability and joyful customer
+//                 experiences.
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+//       </div> */}
+
+//       {/* Key Locations Section */}
+//       {/* <div className="py-16 px-6 bg-white">
+//         <div className="max-w-6xl mx-auto">
+//           <div className="mb-12">
+//             <div className="text-3xl md:text-4xl font-semibold text-neutral-900 mb-4 text-center">
+//               Key <span className="text-yellow-500">Locations</span>
+//             </div>
+//             <div className="w-full h-[2px] bg-gray-300 relative rounded-sm mt-4">
+//               <div className="w-[6%] h-[4px] bg-yellow-500 absolute top-[-1.5px] left-1/2 transform -translate-x-1/2 rounded-sm"></div>
+//             </div>
+//           </div>
+
+//           <div className="grid lg:grid-`cols-2 gap-8">
+//             <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
+//               {locations.map((location, index) => (
+//                 <div
+//                   key={index}
+//                   className="border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 bg-white"
+//                 >
+//                   <div className="flex items-center mb-3">
+//                     <div className="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+//                     <h3 className="text-xl font-semibold text-neutral-900">
+//                       {location.city}
+//                     </h3>
+//                   </div>
+//                   <p className="text-blue-600 font-medium mb-2">
+//                     {location.airport}
+//                   </p>
+//                   <p className="text-gray-600 text-sm">{location.details}</p>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </div> */}
+//       <KeyLocations />
+//       <MeetFounder />
+//     </div>
+//   );
+// };
+
+// export default About;
+
+import { useState, useEffect, useRef } from "react";
 import bannerImg from "../../public/images/about-wide.cd72013b.jpg";
 import { KeyLocations } from "./about/key-locations";
 import { MeetFounder } from "./about/meet-founder";
@@ -8,29 +261,11 @@ import convenient from "../../public/images/Untitled-1.png";
 import reliable from "../../public/images/Untitled-3.png";
 
 const About = () => {
-  // const features = [
-  //   {
-  //     title: "Safe",
-  //     description: "Secure handling, packaging, and real-time tracking.",
-  //     icon: "🛡️",
-  //   },
-  //   {
-  //     title: "Convenient",
-  //     description: "Hands-free travel without the hassle of carrying bags.",
-  //     icon: "✈️",
-  //   },
-  //   {
-  //     title: "Cost-Effective",
-  //     description:
-  //       "Transparent, affordable rates for individuals, families, and groups.",
-  //     icon: "💰",
-  //   },
-  //   {
-  //     title: "Reliable",
-  //     description: "On-time pickups and deliveries every time.",
-  //     icon: "⏰",
-  //   },
-  // ];
+  const [visibleSections, setVisibleSections] = useState([]);
+  const [visibleFeatures, setVisibleFeatures] = useState([]);
+  const heroRef = useRef(null);
+  const aboutRef = useRef(null);
+  const featuresRef = useRef(null);
 
   const features = [
     { label: "Safe", icon: sheildCheck },
@@ -38,10 +273,60 @@ const About = () => {
     { label: "Convenient", icon: convenient },
     { label: "Reliable", icon: reliable },
   ];
+
+  useEffect(() => {
+    // Hero section animation - immediate
+    const heroTimer = setTimeout(() => {
+      // @ts-ignore
+      setVisibleSections((prev) => [...prev, "hero"]);
+    }, 200);
+
+    // About section observer
+    const aboutObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // @ts-ignore
+          if (entry.isIntersecting && !visibleSections.includes("about")) {
+            // @ts-ignore
+            setVisibleSections((prev) => [...prev, "about"]);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    // Features section observer
+    const featuresObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && visibleFeatures.length === 0) {
+            // Animate features one by one
+            features.forEach((_, index) => {
+              setTimeout(() => {
+                // @ts-ignore
+                setVisibleFeatures((prev) => [...prev, index]);
+              }, index * 200);
+            });
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    if (aboutRef.current) aboutObserver.observe(aboutRef.current);
+    if (featuresRef.current) featuresObserver.observe(featuresRef.current);
+
+    return () => {
+      clearTimeout(heroTimer);
+      if (aboutRef.current) aboutObserver.unobserve(aboutRef.current);
+      if (featuresRef.current) featuresObserver.unobserve(featuresRef.current);
+    };
+  }, [visibleSections, visibleFeatures.length]);
+
   return (
     <div className="min-h-screen mt-20">
       {/* Hero Section with background image */}
-      <div className="relative bg-gray-800 py-20 px-4">
+      <div ref={heroRef} className="relative bg-gray-800 py-20 px-4">
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div
           className="absolute inset-0 bg-cover bg-center opacity-50"
@@ -49,11 +334,18 @@ const About = () => {
             backgroundImage: `url(${bannerImg})`,
           }}
         ></div>
-        <div className="relative max-w-7xl mx-auto sm:text-center text-start">
+        <div
+          className={`relative max-w-7xl mx-auto sm:text-center text-start transition-all duration-1000 ease-out ${
+            // @ts-ignore
+            visibleSections.includes("hero")
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          }`}
+        >
           <p className="text-yellow-500 text-sm font-bold uppercase tracking-tight sm:mb-4 mb-2">
             ABOUT US
           </p>
-          <h1 className="text-3xl md:text-5xl text-neutral-50  font-semibold mb-6">
+          <h1 className="text-3xl md:text-5xl text-neutral-50 font-semibold mb-6">
             Seamless Logistics: Excess Baggage
             <br />
             and Timely Delivery, Worldwide
@@ -64,7 +356,15 @@ const About = () => {
       {/* About Us Section */}
       <div className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
+          <div
+            ref={aboutRef}
+            className={`mb-12 transition-all duration-800 ease-out ${
+              // @ts-ignore
+              visibleSections.includes("about")
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-6"
+            }`}
+          >
             <div className="text-3xl md:text-4xl font-semibold text-neutral-900 mb-6">
               About <span className="text-yellow-500">Xcess Luggage</span>
             </div>
@@ -74,29 +374,23 @@ const About = () => {
           </div>
 
           <div className="flex flex-col justify-center max-w-7xl mx-auto">
-            <div className="mb-12">
-              {/* <p className="text-lg text-neutral-900 mb-6">
-                With decades of logistics expertise,{" "}
-                <span className="font-semibold text-yellow-600">
-                  Xcess Luggage
-                </span>{" "}
-                was founded with a simple mission — to let you travel light
-                while we take care of your bags. Our nationwide coverage spans
-                thousands of pin codes, reaching metros and remote towns alike.
-              </p>
-              <p className="text-lg text-neutral-900 leading-relaxed">
-                We believe luggage delivery should be seamless, secure, and
-                stress-free for every traveler.
-              </p> */}
+            <div
+              className={`mb-12 transition-all duration-800 ease-out delay-200 ${
+                // @ts-ignore
+                visibleSections.includes("about")
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
+              }`}
+            >
               <p className="text-lg text-neutral-900 mb-6">
-                We are India’s trusted luggage transport experts with over 25
+                We are India's trusted luggage transport experts with over 25
                 years of experience in logistics and customer care. Dedicated to
                 making travel simpler and safer, we go beyond moving luggage —
                 we deliver peace of mind.
               </p>
               <p className="text-lg text-neutral-900 mb-6">
                 Inspired by the warmth, reliability, and service excellence of
-                our flagship group, we’ve built a reputation for delivering on
+                our flagship group, we've built a reputation for delivering on
                 promises, creating lasting relationships, and setting benchmarks
                 in reliability. From the friendly smile at your doorstep to the
                 meticulous care we take in handling your belongings — every step
@@ -104,24 +398,23 @@ const About = () => {
               </p>
             </div>
 
-            {/* <div className="flex justify-between gap-x-4"> */}
-            {/* <div className="p-8 rounded-lg transition-shadow duration-300 bg-yellow-50/20 border">
-                <div className="flex items-center mb-4">
-                  <div className="text-xl font-semibold text-yellow-500">
-                    Our Mission
-                  </div>
-                </div>
-                <p className="text-neutral-900 leading-relaxed">
-                  With years of expertise in logistics and customer care, our
-                  mission is to help you focus on your trip — not your bags.
-                </p>
-              </div> */}
-
-            <div className="flex flex-wrap justify-between mt-5 gap-y-10">
+            {/* Features with Animation */}
+            <div
+              ref={featuresRef}
+              className="flex flex-wrap justify-between mt-5 gap-y-10"
+            >
               {features.map((feature, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-wrap justify-center items-center align-middle px-10 gap-x-6"
+                  className={`flex flex-wrap justify-center items-center align-middle px-10 gap-x-6 transition-all duration-700 ease-out ${
+                    // @ts-ignore
+                    visibleFeatures.includes(idx)
+                      ? "opacity-100 translate-y-0 scale-100"
+                      : "opacity-0 translate-y-8 scale-95"
+                  }`}
+                  style={{
+                    transitionDelay: `${idx * 200}ms`,
+                  }}
                 >
                   <img
                     src={feature.icon}
@@ -136,113 +429,10 @@ const About = () => {
                 </div>
               ))}
             </div>
-            {/* </div> */}
-
-            {/* Features Grid */}
-            {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="text-center p-6 bg-yellow-50 rounded-lg hover:shadow-lg transition-shadow duration-300"
-                >
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-yellow-600 mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-neutral-900 text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div> */}
           </div>
         </div>
       </div>
 
-      {/* Mission and Vision Section */}
-      {/* <div className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <div className="text-3xl md:text-4xl font-semibold text-neutral-900 mb-4 text-center">
-              Our <span className="text-yellow-500">Mission and Vision</span>
-            </div>
-            <div className="w-full h-[2px] bg-gray-300 relative rounded-sm mt-4">
-              <div className="w-[8%] h-[4px] bg-yellow-500 absolute top-[-1.5px] left-1/2 transform -translate-x-1/2 rounded-sm"></div>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="flex items-center mb-4">
-                <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-white text-sm font-bold">M</span>
-                </div>
-                <h3 className="text-xl font-semibold text-yellow-500">
-                  Our Mission
-                </h3>
-              </div>
-              <p className="text-neutral-900 leading-relaxed">
-                To simplify global travel by providing secure, seamless and
-                on-time delivery of excess baggage and packages - relieving
-                travel stress and enriching every journey with peace of mind.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="flex items-center mb-4">
-                <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-white text-sm font-bold">V</span>
-                </div>
-                <h3 className="text-xl font-semibold text-yellow-500">
-                  Our Vision
-                </h3>
-              </div>
-              <p className="text-neutral-900 leading-relaxed">
-                To transform the future of travel and logistics by being the
-                world's most trusted solution for effortless baggage and package
-                delivery - offering unmatched reliability and joyful customer
-                experiences.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      {/* Key Locations Section */}
-      {/* <div className="py-16 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-12">
-            <div className="text-3xl md:text-4xl font-semibold text-neutral-900 mb-4 text-center">
-              Key <span className="text-yellow-500">Locations</span>
-            </div>
-            <div className="w-full h-[2px] bg-gray-300 relative rounded-sm mt-4">
-              <div className="w-[6%] h-[4px] bg-yellow-500 absolute top-[-1.5px] left-1/2 transform -translate-x-1/2 rounded-sm"></div>
-            </div>
-          </div>
-
-          <div className="grid lg:grid-`cols-2 gap-8">
-            <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
-              {locations.map((location, index) => (
-                <div
-                  key={index}
-                  className="border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 bg-white"
-                >
-                  <div className="flex items-center mb-3">
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
-                    <h3 className="text-xl font-semibold text-neutral-900">
-                      {location.city}
-                    </h3>
-                  </div>
-                  <p className="text-blue-600 font-medium mb-2">
-                    {location.airport}
-                  </p>
-                  <p className="text-gray-600 text-sm">{location.details}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div> */}
       <KeyLocations />
       <MeetFounder />
     </div>
