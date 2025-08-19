@@ -32,15 +32,15 @@ export function Hero() {
   return (
     <section className="mt-20 relative">
       {/* Desktop Layout */}
-      <div className="hidden lg:block h-[70vh]">
+      <div className="hidden lg:block h-[90vh]">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[80vh]"
           style={{ backgroundImage: `url(/images/n7.jpeg)` }}
         ></div>
 
         {/* Gradient Overlay from left to right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent h-[80vh]"></div>
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-center px-20 pt-40">

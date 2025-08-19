@@ -29,7 +29,7 @@ export default function Domestic() {
   const [bagOptions, setBagOptions] = useState<BagOption[]>([
     {
       id: "small",
-      name: "Small box | Max: 5 Kgs",
+      name: "Small bag | Max: 5 Kgs",
       maxWeight: "5",
       originalPrice: 531.35,
       discountedPrice: 381.35,
@@ -45,7 +45,7 @@ export default function Domestic() {
     },
     {
       id: "medium",
-      name: "Medium box | Max: 15 Kgs",
+      name: "Medium bag | Max: 15 Kgs",
       maxWeight: "15",
       originalPrice: 1344.06,
       discountedPrice: 1114.06,

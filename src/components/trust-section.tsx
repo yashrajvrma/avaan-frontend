@@ -1,5 +1,6 @@
 import { ShieldCheck, Truck, IndianRupee, Clock, MapPin } from "lucide-react";
-import packageImg from "../../public/images/depositphotos_165317552-stock-photo-cheerful-delivery-man-happy-young.jpg";
+// import packageImg from "../../public/images/depositphotos_165317552-stock-photo-cheerful-delivery-man-happy-young.jpg";
+import packageImg from "../../public/images/n9.jpeg";
 
 const features = [
   {
@@ -67,7 +68,7 @@ export function TrustSection() {
           <img
             src={packageImg}
             alt="Insured shipping card preview"
-            className="rounded-3xl border shadow-sm max-w-sm w-full h-96 object-cover"
+            className="rounded-3xl border shadow-sm sm:max-w-lg max-w-sm w-full h-96 object-cover"
           />
         </div>
       </div>
