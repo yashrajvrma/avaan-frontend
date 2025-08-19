@@ -5,6 +5,7 @@ import {
   Package,
   Truck,
 } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import ServicesImg from "../../public/images/services-img.jpg";
 import { useNavigate } from "react-router-dom";
 
@@ -38,12 +39,52 @@ const steps = [
 
 export function StepsSection() {
   const navigate = useNavigate();
+  const [visibleSteps, setVisibleSteps] = useState([]);
+  const [hasTriggered, setHasTriggered] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasTriggered) {
+            setHasTriggered(true);
+            // Animate steps one by one with delay
+            steps.forEach((_, index) => {
+              setTimeout(() => {
+                // @ts-ignore
+                setVisibleSteps((prev) => [...prev, index]);
+              }, index * 200); // 200ms delay between each step
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the section is visible
+        rootMargin: "0px 0px -100px 0px", // Trigger slightly before the section comes into view
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [hasTriggered]);
 
   const handleClick = () => {
     navigate("/domestic");
   };
+
   return (
-    <section className="mx-auto max-w-7xl px-6 py-12 md:py-16 space-y-10 sm:mt-40 mt-20">
+    <section
+      ref={sectionRef}
+      className="mx-auto max-w-7xl px-6 py-12 md:py-16 space-y-10 sm:mt-40 mt-20"
+    >
       {/* Top: Title + Line + Description + Button */}
       <div className="flex flex-col md:flex-row  gap-x-10">
         <div className="flex flex-col sm:w-[50%] ">
@@ -81,11 +122,22 @@ export function StepsSection() {
           />
         </div>
 
-        {/* Right: Steps */}
+        {/* Right: Steps with Animation */}
         <div className="grid gap-5 sm:mt-0 mt-10">
-          {steps.map((s) => (
-            <div key={s.title} className="flex gap-2">
-              <div className="mt-1 flex h-20 w-20 shrink-0 items-center align-middle rounded-full  text-yellow-500">
+          {steps.map((s, index: any) => (
+            <div
+              key={s.title}
+              className={`flex gap-2 transition-all duration-700 ease-out ${
+                // @ts-ignore
+                visibleSteps.includes(index)
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-8"
+              }`}
+              style={{
+                transitionDelay: hasTriggered ? "0ms" : `${index * 200}ms`,
+              }}
+            >
+              <div className="mt-1 flex h-20 w-20 shrink-0 items-center align-middle rounded-full text-yellow-500">
                 <s.icon className="h-14 w-14" />
               </div>
               <div className="flex flex-col justify-center align-middle">
