@@ -4,7 +4,8 @@ import userExp from "../../public/images/userExp.png";
 import money from "../../public/images/money-transfer-smartphone.png";
 import privacy from "../../public/images/privacy-settings.png";
 import truck from "../../public/images/shipping-truck.png";
-import indiaMap from "../../public/images/xcessluggugae_1.png";
+// import indiaMap from "../../public/images/xcessluggugae_1.png";
+import indiaMap from "../../public/images/xcessluggugae_4.png";
 
 const features = [
   {
@@ -128,7 +129,7 @@ export function TrustSection() {
           <img
             src={indiaMap}
             alt="Insured shipping card preview"
-            className="rounded-3xl border shadow-sm sm:max-w-lg max-w-sm w-full h-96 object-cover"
+            className="bg-neutral-100 p-1  rounded-2xl sm:max-w-lg max-w-sm w-full object-cover"
           />
         </div>
       </div>
