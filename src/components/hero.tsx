@@ -47,7 +47,7 @@
 //         {/* Background Image */}
 //         <div
 //           className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[80vh]"
-//           style={{ backgroundImage: `url(/images/n7.jpeg)` }}
+//           style={{ backgroundImage: `url(/images/new-hero.jpeg)` }}
 //         ></div>
 
 //         {/* Gradient Overlay from left to right */}
@@ -294,7 +294,7 @@ export function Hero() {
 
   // Image slideshow array - keeping original first image and adding placeholders
   const slideImages = [
-    "/images/n7.jpeg", // Original image from your code
+    "/images/new-hero.jpeg", // Original image from your code
     placeholder1, // Placeholder image 1
     placeholder2, // Placeholder image 2
   ];
