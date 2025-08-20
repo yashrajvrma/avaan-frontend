@@ -6,7 +6,8 @@ import boxOpen from "../../public/images/box-open.png";
 import truck from "../../public/images/shipping-truck.png";
 import clock from "../../public/images/time-fast.png";
 import order from "../../public/images/digital-payment.png";
-import packageImg from "../../public/images/n9.jpeg";
+// import packageImg from "../../public/images/n9.jpeg";
+import packageImg from "../../public/images/shipnow.jpeg";
 
 const steps = [
   {
@@ -111,13 +112,13 @@ export function StepsSection() {
       </div>
 
       {/* Bottom: Image + Steps */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-20 pt-10 items-start">
+      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-20 pt-5 items-start">
         {/* Left: Image */}
         <div className="sm:w-lg h-full sm:mx-auto">
           <img
             src={packageImg}
             alt="Happy customer image with chat bubbles"
-            className="w-full h-full object-cover rounded-3xl border shadow-sm"
+            className="w-full h-full object-cover"
           />
         </div>
 
