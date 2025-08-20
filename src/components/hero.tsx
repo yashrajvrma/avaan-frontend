@@ -544,18 +544,18 @@ export function Hero() {
 
         {/* Mobile Booking Card - Fixed at bottom with Animation */}
         <div
-          className={`absolute bottom-0 left-0 right-0 bg-white rounded-lg p-6 mx-6 shadow-lg lg:hidden transition-all duration-1000 ease-out delay-300 ${
+          className={`absolute bottom-15 left-0 right-0 bg-white rounded-lg p-6 mx-6 shadow-lg lg:hidden transition-all duration-1000 ease-out delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           {/* Tab Header */}
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <div className="inline-flex bg-gray-100 rounded-lg p-1">
               <button className="bg-yellow-500 text-white py-2 px-4 text-sm font-medium rounded-md">
                 Domestic
               </button>
             </div>
-          </div>
+          </div> */}
 
           {/* Form Fields */}
           <div className="grid grid-cols-1 gap-3 mb-3">
