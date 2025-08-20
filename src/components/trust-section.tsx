@@ -4,7 +4,7 @@ import userExp from "../../public/images/userExp.png";
 import money from "../../public/images/money-transfer-smartphone.png";
 import privacy from "../../public/images/privacy-settings.png";
 import truck from "../../public/images/shipping-truck.png";
-// import indiaMap from "../../public/images/xcessluggugae_1.png";
+import personWithLaptop from "../../public/images/person-with-laptop.jpeg";
 import indiaMap from "../../public/images/xcessluggugae_4.png";
 
 const features = [
@@ -35,9 +35,12 @@ const features = [
   },
 ];
 
+const images = [indiaMap, personWithLaptop];
+
 export function TrustSection() {
   const [visibleFeatures, setVisibleFeatures] = useState([]);
   const [hasTriggered, setHasTriggered] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -72,6 +75,17 @@ export function TrustSection() {
       }
     };
   }, [hasTriggered]);
+
+  // Auto slideshow effect
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // 3 seconds
+
+    return () => clearInterval(slideInterval);
+  }, []);
 
   return (
     <section ref={sectionRef} className="mx-auto max-w-7xl px-6 py-12 md:py-16">
@@ -118,19 +132,28 @@ export function TrustSection() {
           ))}
         </ul>
 
-        {/* Image with slight animation */}
+        {/* Image slideshow with slight animation */}
         <div
-          className={`flex transition-all duration-800 ease-out delay-500 ${
+          className={`flex relative overflow-hidden transition-all duration-800 ease-out delay-500 ${
             hasTriggered
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4"
           }`}
         >
-          <img
-            src={indiaMap}
-            alt="Insured shipping card preview"
-            className="bg-neutral-100 p-1  rounded-2xl sm:max-w-lg max-w-sm w-full object-cover"
-          />
+          <div className="relative bg-neutral-100 p-1 rounded-2xl sm:max-w-lg max-w-sm w-full">
+            {images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Slideshow image ${index + 1}`}
+                className={`w-full object-cover rounded-2xl transition-opacity duration-500 ${
+                  index === currentImageIndex
+                    ? "opacity-100"
+                    : "opacity-0 absolute top-1 left-1 right-1 bottom-1"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
