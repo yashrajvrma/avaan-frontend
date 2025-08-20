@@ -4,6 +4,7 @@ import { StepsSection } from "@/components/step-section";
 import { TrustSection } from "@/components/trust-section";
 import { ServicesSection } from "@/components/services-section";
 import { SiteFooter } from "@/components/site-footer";
+import WhyChooseUs from "@/components/why-choose-us";
 // import WhoWeAreSection from "@/components/who-we-are";
 
 export default function Page() {
@@ -15,6 +16,7 @@ export default function Page() {
       <StepsSection />
       <TrustSection />
       <ServicesSection />
+      <WhyChooseUs />
       <SiteFooter />
     </main>
   );

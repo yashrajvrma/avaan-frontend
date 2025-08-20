@@ -93,7 +93,7 @@ export function StepsSection() {
             <span className="text-neutral-900"> Xcess</span>
           </div>
           <div className="w-full h-[2px] bg-gray-300 relative rounded-sm mt-4">
-            <div className="w-[15%] h-[4px] bg-yellow-500 absolute top-[-1.5px] left-0 rounded-sm"></div>
+            <div className="w-[15%] h-[4px] bg-yellow-500 absolute top-[-1px] left-0 rounded-sm"></div>
           </div>
         </div>
 
