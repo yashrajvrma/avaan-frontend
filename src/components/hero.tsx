@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button } from "./ui/button";
+// import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 import truck from "../../public/images/shipping-truck.png";
 
@@ -104,7 +104,7 @@ export function Hero() {
           >
             <div className="bg-white rounded-2xl p-8 shadow-lg w-full max-w-4xl">
               {/* Tab Header */}
-              <div className="mb-1">
+              {/* <div className="mb-1">
                 <div className="inline-flex bg-gray-100 rounded-lg p-1">
                   <Button
                     variant="outline"
@@ -113,7 +113,7 @@ export function Hero() {
                     Domestic
                   </Button>
                 </div>
-              </div>
+              </div> */}
 
               {/* Form Fields in a row */}
               <div className="flex gap-4 items-end">
