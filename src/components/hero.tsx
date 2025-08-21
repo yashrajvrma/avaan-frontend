@@ -74,7 +74,7 @@
 //             </div>
 
 //             {/* Main Heading */}
-//             <div className="text-5xl sm:text-7xl font-bold text-neutral-50 tracking-tight mb-2">
+//             <div className="text-5xl sm:text-7xl font-semibold text-neutral-50 tracking-tight mb-2">
 //               We handle,
 //               <div className="sm:pt-2 pt-0">You Travel</div>
 //             </div>
@@ -196,7 +196,7 @@
 //             </div>
 
 //             {/* Main Heading */}
-//             <div className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
+//             <div className="text-4xl sm:text-5xl font-semibold text-white leading-tight mb-4">
 //               Travel Light,
 //               <br />
 //               Arrive Happy
@@ -274,12 +274,14 @@
 //   );
 // }
 import { useState, useEffect } from "react";
-// import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 import truck from "../../public/images/shipping-truck.png";
-
-import placeholder1 from "../../public/images/placeholder1.png";
-import placeholder2 from "../../public/images/placeholder2.jpg";
+import mobileHero1 from "../../public/images/woman-delivering-package-man.jpg";
+import hero1 from "../../public/images/new-hero.jpeg";
+import hero2 from "../../public/images/hero2.jpeg";
+import hero3 from "../../public/images/hero3.jpeg";
+import hero4 from "../../public/images/hero4.jpeg";
+import hero5 from "../../public/images/hero2.jpeg";
 
 export function Hero() {
   const [formData, setFormData] = useState({
@@ -293,16 +295,77 @@ export function Hero() {
   const navigate = useNavigate();
 
   // Image slideshow array - keeping original first image and adding placeholders
-  const slideImages = [
-    "/images/new-hero.jpeg", // Original image from your code
-    placeholder1, // Placeholder image 1
-    placeholder2, // Placeholder image 2
-  ];
+  const slideImages = [hero1, hero2, hero3, hero4, hero5];
 
-  const mobileSlideImages = [
-    "/images/woman-delivering-package-man.jpg", // Original mobile image from your code
-    placeholder1, // Placeholder image 1
-    placeholder2, // Placeholder image 2
+  const mobileSlideImages = [mobileHero1, hero2, hero3, hero4, hero5];
+
+  // Dynamic content for each slide
+  const slideContent = [
+    {
+      // hero1 - original content
+      desktop: {
+        headline: "We handle,\nYou Travel",
+        subheading:
+          "Door-to-door luggage delivery across India — safe, reliable, and affordable.",
+      },
+      mobile: {
+        headline: "Travel Light,\nArrive Happy",
+        subheading:
+          "Door-to-door luggage delivery across India — safe, reliable, and affordable.",
+      },
+    },
+    {
+      // hero2 - wedding/celebration theme
+      desktop: {
+        headline: "Celebrate Without\nthe Baggage",
+        subheading:
+          "We deliver your wedding outfits, gifts, and essentials safely—so you can enjoy the big day stress-free.",
+      },
+      mobile: {
+        headline: "Celebrate Without\nthe Baggage",
+        subheading:
+          "We deliver your wedding outfits, gifts, and essentials safely—so you can enjoy the big day stress-free.",
+      },
+    },
+    {
+      // hero3 - business theme
+      desktop: {
+        headline: "Arrive Ready\nfor Business",
+        subheading:
+          "Your luggage reaches before you do—safe, secure, and on time.",
+      },
+      mobile: {
+        headline: "Arrive Ready\nfor Business",
+        subheading:
+          "Your luggage reaches before you do—safe, secure, and on time.",
+      },
+    },
+    {
+      // hero4 - family theme
+      desktop: {
+        headline: "Family Time,\nBag-Free",
+        subheading:
+          "Travel light and create memories while we handle your luggage.",
+      },
+      mobile: {
+        headline: "Family Time,\nBag-Free",
+        subheading:
+          "Travel light and create memories while we handle your luggage.",
+      },
+    },
+    {
+      // hero5 - travel exploration theme
+      desktop: {
+        headline: "Travel Light,\nEnjoy More",
+        subheading:
+          "Explore the world without the burden of heavy bags—we'll deliver them to your destination.",
+      },
+      mobile: {
+        headline: "Travel Light,\nEnjoy More",
+        subheading:
+          "Explore the world without the burden of heavy bags—we'll deliver them to your destination.",
+      },
+    },
   ];
 
   useEffect(() => {
@@ -342,6 +405,9 @@ export function Hero() {
     console.log("Booking data:", formData);
     navigate("/domestic");
   };
+
+  // Get current slide content
+  const currentContent = slideContent[currentImageIndex];
 
   return (
     <section className="mt-20 relative">
@@ -398,16 +464,20 @@ export function Hero() {
               </span>
             </div>
 
-            {/* Main Heading */}
-            <div className="text-5xl sm:text-7xl font-bold text-neutral-50 tracking-tight mb-2">
-              We handle,
-              <div className="sm:pt-2 pt-0">You Travel</div>
+            {/* Dynamic Main Heading */}
+            <div className="text-5xl sm:text-7xl font-semibold text-neutral-50 tracking-tight mb-2 transition-all duration-500">
+              {currentContent.desktop.headline
+                .split("\n")
+                .map((line, index) => (
+                  <div key={index} className={index > 0 ? "sm:pt-2 pt-0" : ""}>
+                    {line}
+                  </div>
+                ))}
             </div>
 
-            {/* Subtitle */}
-            <p className="text-white/90 text-lg font-medium mb-5 mt-5 max-w-lg">
-              Door-to-door luggage delivery across India — safe, reliable, and
-              affordable.
+            {/* Dynamic Subtitle */}
+            <p className="text-white/90 text-lg font-medium mb-5 mt-5 max-w-lg transition-all duration-500">
+              {currentContent.desktop.subheading}
             </p>
 
             {/* Book Now Button */}
@@ -527,17 +597,22 @@ export function Hero() {
               </span>
             </div>
 
-            {/* Main Heading */}
-            <div className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
-              Travel Light,
-              <br />
-              Arrive Happy
+            {/* Dynamic Mobile Main Heading */}
+            <div className="text-5xl sm:text-5xl font-semibold text-white leading-tight mb-4 transition-all duration-2000">
+              {currentContent.mobile.headline.split("\n").map((line, index) => (
+                <div key={index}>
+                  {line}
+                  {index <
+                    currentContent.mobile.headline.split("\n").length - 1 && (
+                    <br />
+                  )}
+                </div>
+              ))}
             </div>
 
-            {/* Subtitle */}
-            <p className="text-white/90 text-lg mb-3">
-              Door-to-door luggage delivery across India — safe, reliable, and
-              affordable.
+            {/* Dynamic Mobile Subtitle */}
+            <p className="text-white/90 text-base mb-3 transition-all duration-500">
+              {currentContent.mobile.subheading}
             </p>
           </div>
         </div>
@@ -548,15 +623,6 @@ export function Hero() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          {/* Tab Header */}
-          {/* <div className="mb-4">
-            <div className="inline-flex bg-gray-100 rounded-lg p-1">
-              <button className="bg-yellow-500 text-white py-2 px-4 text-sm font-medium rounded-md">
-                Domestic
-              </button>
-            </div>
-          </div> */}
-
           {/* Form Fields */}
           <div className="grid grid-cols-1 gap-3 mb-3">
             <input

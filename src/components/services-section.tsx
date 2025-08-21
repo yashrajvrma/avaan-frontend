@@ -49,10 +49,11 @@ export function ServicesSection() {
       {/* Header */}
       <div className="mb-12">
         <div className="text-3xl md:text-4xl font-semibold tracking-tight text-neutral-900 leading-tight">
-          Our <span className="text-yellow-500">Services</span>
+          <span className="text-yellow-500"> We deliver all types </span>
+          of Luggage
         </div>
         <div className="w-full h-[2px] bg-gray-300 relative rounded-sm mt-4">
-          <div className="w-[6%] h-[4px] bg-yellow-500 absolute top-[-1.5px] left-0 rounded-sm"></div>
+          <div className="w-[10%] h-[4px] bg-yellow-500 absolute top-[-1.5px] left-0 rounded-sm"></div>
         </div>
       </div>
 
